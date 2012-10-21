@@ -15,7 +15,7 @@ function initializeToolbar() {
 	initializeDrawingManager();
 	assignButtonsToDrawingTool();
 
-	assignOtherButtons();
+	$("#side-panel").toggle();
 }
 
 // LOCATION NAMES
@@ -51,18 +51,7 @@ function populateLocationNames() {
 
 // LOCATION FILTER TOOL
 function assignButtonsToDateFilter() {
-	$('#location-list').button();
 	$("#location-exact").button();
-
-	$("#date-calendar").button({
-		text : false,
-		icons : {
-			primary : "ui-icon-calendar"
-		}
-	}).unbind('mouseenter mouseleave');
-
-	$("#from-date").button();
-	$("#to-date").button();
 
 	$("#from-date").datepicker({
 		dateFormat : "d M, y",
@@ -93,7 +82,7 @@ function assignButtonsToDateFilter() {
 		dateFormat : "d M, y",
 		maxDate : '0',
 		onSelect : function(dateText, inst) {
-			if ($("#from-date").val() == "From") {
+			if ($("#from-date").val() == "") {
 				/* If from_date is not set and to_date is set, then
 				 * set from_date = to_date - 2
 				 */
@@ -113,14 +102,6 @@ function assignButtonsToDateFilter() {
 			}
 		}
 	}).attr('readonly', 'readonly').parent().buttonset();
-	;
-
-	$("#location-go").button({
-		text : false,
-		icons : {
-			primary : "ui-icon-play"
-		}
-	});
 }
 
 // DRAW FILTER TOOL
@@ -143,35 +124,6 @@ function assignButtonsToDrawingTool() {
 	/* This function assigns buttons to the customs buttons that
 	* mimic the api Drawing controls.
 	*/
-	// Drawing tool button-set
-	$("#draw-polygon").button({
-		text : false,
-		icons : {
-			primary : "ui-icon-pencil"
-		}
-	});
-
-	$("#draw-rectangle").button({
-		text : false,
-		icons : {
-			primary : "ui-icon-circlesmall-plus"
-		}
-	});
-
-	$("#draw-circle").button({
-		text : false,
-		icons : {
-			primary : "ui-icon-radio-on"
-		}
-	});
-
-	$("#draw-line").button({
-		text : false,
-		icons : {
-			primary : "ui-icon-minus"
-		}
-	}).parent().buttonset();
-
 	// Disable circle & polyline
 	$("#draw-circle").attr('disabled', true);
 	$("#draw-line").attr('disabled', true);
@@ -197,31 +149,6 @@ function clickOverlayButton(overlay_type) {
 }
 
 // OTHER BUTTONS
-
-function assignOtherButtons() {
-	$("#side-panel-button").button({
-		text : false,
-		icons : {
-			primary : "ui-icon-comment"
-		}
-	})
-	$("#side-panel").toggle();
-
-	$("#clear-button").button({
-		text : false,
-		icons : {
-			primary : "ui-icon-trash"
-		}
-	});
-
-	$("#go-button").button({
-		text : false,
-		icons : {
-			primary : "ui-icon-play"
-		}
-	});
-}
-
 function showHideSidePanel() {
 	$("#side-panel").toggle();
 }

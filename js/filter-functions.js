@@ -55,7 +55,7 @@ function buildQueryString() {
 		}
 	}
 	//Date
-	if ($("#from-date").val() != "From") {
+	if ($("#from-date").val() != "") {
 		var from_date = new Date($("#from-date").val());
 		var to_date = new Date($("#to-date").val());
 
@@ -139,16 +139,12 @@ function loadTweetsToSidePanel() {
 	 * tweets in global variables.
 	 */
 	$("#side-panel").empty();
+	
+	$("#side-panel").append('<div class="callout-box" style="height:45px;"></div>');
 
 	$.each(status_id_list, function(status_id, value) {
 		$("#side-panel").append(getTweetContentHTML(status_id));
 		//consol.log(getContentStringOfCallout(status_id));
-	});
-	$(".trace-path").button({
-		text : false,
-		icons : {
-			primary : "ui-icon-flag"
-		}
 	});
 }
 

@@ -5,6 +5,10 @@ GUI for [Gambit](http://brain.isi.edu/~gambit/v2.0/index.html)
 
 ---
 
+
+Gambit is a visualization tool for geotagged data from Twitter, and to understand patterns in human behavior.
+
+
 ### License
 
 Copyright (c) 2012 Nibir Bora, Vladimir Zaytsev
@@ -31,9 +35,11 @@ Following the file structure for the inteface web files.
 	..
 	|-	index.html
 	|	
+	|-	bootstrap
+	|	|-	//Twitter Bootstrap files
+	|
 	|-	css
 	|	|-	style-document.css
-	|	|-	style-toolbar.css
 	|	|-	style-tweet-callout.css
 	|
 	|-	img
@@ -45,8 +51,6 @@ Following the file structure for the inteface web files.
 	|	|-	map-functions.js
 	|	|-	map-globals.js
 	|	|-	toolbar-functions.js
-	|-	jquery
-		|-	//jQuery files
 
 ---
 
@@ -54,21 +58,22 @@ Following the file structure for the inteface web files.
 
 This section desctibes the events on the interface and how they are being handled.
 
+```
 	ON window_load:
      	~INITIALIZE global variables
      	INITIALIZE map
      	INITIALIZE toolbar
      	ADD event_listners
      	SET map_center
+```
 
-
+```
 	ON location_change:
      	CLEAR markers
      	CLEAR overlays
      	EMPTY tweet_list
      	EMPTY side_panel
      	SET map_center
-
 
     ON from_date SET:
      	IF to_date IS NOT SET:
@@ -90,8 +95,9 @@ This section desctibes the events on the interface and how they are being handle
           	SET drawing_option
      	IF SAME drawing_option SELECTED
           	SET drawing_option TO null
+```
 
-
+```
 	ON go_button CLICK:
     	IF tweet_list IS EMPTY:
           	BUILD query_string FROM SELECTED filters
@@ -109,11 +115,12 @@ This section desctibes the events on the interface and how they are being handle
                TRIM tweet_set OF tweets OUTSIDE overlay
                DELETE overlay
                LOAD tweets ONTO side_panel
+```
 
-
+```
 	ON user_trace_button CLICK:
     	Create sub_list OF tweets.location OF selected_user ONLY
      	DRAW polyline OF tweets FROM selected_user
      	RESIZE map TO FIT NEW bounds
-
+```
 

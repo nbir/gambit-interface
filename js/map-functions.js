@@ -71,6 +71,8 @@ function clearButtonClick() {
 	clearOverlay();
 	clearAllTraces();
 	clearTweetList();
+	
+	map.setZoom(11);
 }
 
 
@@ -105,6 +107,7 @@ function changeMapCenter() {
 	}
 	//alert(location_center_coordinates[location_id][0] + ", " + location_center_coordinates[location_id][1]);
 	map.setCenter(new google.maps.LatLng(location_center_coordinates[location_id][0], location_center_coordinates[location_id][1]));
+	map.setZoom(11);
 }
 
 // MARKER PLOT
@@ -135,13 +138,6 @@ function addMarker(location, status_id) {
 		// Add mouse over even to the markers to show tweet details
 		google.maps.event.addListener(markers_on_map[status_id], 'click', function() {
 			infowindow.open(map, markers_on_map[status_id]);
-			//render button
-			$(".trace-path").button({
-				text : false,
-				icons : {
-					primary : "ui-icon-flag"
-				}
-			});
 		});
 		// Call-out close event
 		google.maps.event.addListener(markers_on_map[status_id], 'mouseout', function() {
@@ -162,7 +158,7 @@ function getTweetContentHTML(status_id) {
 	var tweet_date = new Date(tweet_list[status_id].timestamp);
 
 	var content_window_string = '<div class="callout-box"><div class="callout-header">';
-	content_window_string += '<button id="trace-path-button-' + status_id + '" class="trace-path" onclick="javascript:traceUserForStatusID(' + status_id + ');">Trace</button>';
+	content_window_string += '<button id="trace-path-button-' + status_id + '" class="btn pull-left" onclick="javascript:traceUserForStatusID(' + status_id + ');"><i class="icon-flag"></i></button>';
 	content_window_string += '<p class="callout-date">' + (tweet_date.getMonth() + 1) + '/' + tweet_date.getDate() + '/' + tweet_date.getFullYear() + '</p>';
 	content_window_string += '<p class="callout-time">' + tweet_date.getHours() + ':' + tweet_date.getMinutes() + '</p>';
 	if (tweet_list[status_id].place_name != null) {
