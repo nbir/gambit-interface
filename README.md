@@ -49,6 +49,14 @@ Following the file structure for the inteface web files.
 	|	|-	map-functions.js
 	|	|-	map-globals.js
 	|	|-	toolbar-functions.js
+	|
+	|-	markerclusterer
+		|-	images
+		|	|-	// MarkerClusterer images
+		|
+		|-	src
+			|-	markerclusterer_compiled.js
+			|-	markerclusterer.js
 
 
 ## Event structure

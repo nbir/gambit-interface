@@ -34,8 +34,10 @@ function clearAllMarkers() {
 	markers_on_map = [];
 	
 	//Delete marker clusters as well
-	marker_cluster.clearMarkers();
-	marker_cluster = null;
+	if(marker_cluster != null) {
+		marker_cluster.clearMarkers();
+		marker_cluster = null;
+	}
 }
 
 function clearOverlay() {
