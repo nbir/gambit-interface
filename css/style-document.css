@@ -19,6 +19,9 @@ html, body {
 	height: 100%;
 	margin: 0 auto;
 }
+#map-canvas img {
+	max-width:none;
+}
 
 
 /* Side panel */

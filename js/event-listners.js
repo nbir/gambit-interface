@@ -16,8 +16,7 @@ function initialize() {
 	initializeToolbar();
 	addEventListners();
 
-	changeMapCenter();
-
+	//changeMapCenter();
 }
 
 function addEventListners() {
@@ -29,22 +28,26 @@ function addEventListners() {
 	google.maps.event.addDomListener(document.getElementById("draw-polygon"), 'click', function() {
 		clickOverlayButton(google.maps.drawing.OverlayType.POLYGON);
 	});
-	google.maps.event.addDomListener(document.getElementById("draw-circle"), 'click', function() {
-		clickOverlayButton(google.maps.drawing.OverlayType.CIRCLE);
-	});
 	google.maps.event.addDomListener(document.getElementById("draw-rectangle"), 'click', function() {
 		clickOverlayButton(google.maps.drawing.OverlayType.RECTANGLE);
+	});
+	/*
+	google.maps.event.addDomListener(document.getElementById("draw-circle"), 'click', function() {
+		clickOverlayButton(google.maps.drawing.OverlayType.CIRCLE);
 	});
 	google.maps.event.addDomListener(document.getElementById("draw-line"), 'click', function() {
 		clickOverlayButton(google.maps.drawing.OverlayType.POLYLINE);
 	});
+	*/
+	
+	google.maps.event.addDomListener(document.getElementById("button-cluster-markers"), 'click', markerClusterClick);
 
 	google.maps.event.addDomListener(document.getElementById("side-panel-button"), 'click', showHideSidePanel);
 	google.maps.event.addDomListener(document.getElementById("clear-button"), 'click', clearButtonClick);
 	google.maps.event.addDomListener(document.getElementById("go-button"), 'click', goButtonClick);
 
-	// MAP EVENTS
 
+	// MAP EVENTS
 	// Drawing tool events
 	google.maps.event.addListener(drawing_manager, 'polygoncomplete', function(polygon) {
 		clearOverlay();
@@ -52,16 +55,16 @@ function addEventListners() {
 		current_overlay_type = google.maps.drawing.OverlayType.POLYGON;
 		drawing_manager.setDrawingMode(null);
 	});
-	google.maps.event.addListener(drawing_manager, 'circlecomplete', function(circle) {
-		clearOverlay();
-		current_overlay = circle;
-		current_overlay_type = google.maps.drawing.OverlayType.CIRCLE;
-		drawing_manager.setDrawingMode(null);
-	});
 	google.maps.event.addListener(drawing_manager, 'rectanglecomplete', function(rectangle) {
 		clearOverlay();
 		current_overlay = rectangle;
 		current_overlay_type = google.maps.drawing.OverlayType.RECTANGLE;
+		drawing_manager.setDrawingMode(null);
+	});
+	google.maps.event.addListener(drawing_manager, 'circlecomplete', function(circle) {
+		clearOverlay();
+		current_overlay = circle;
+		current_overlay_type = google.maps.drawing.OverlayType.CIRCLE;
 		drawing_manager.setDrawingMode(null);
 	});
 	google.maps.event.addListener(drawing_manager, 'polylinecomplete', function(polyline) {

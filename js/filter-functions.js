@@ -31,6 +31,10 @@ function goButtonClick() {
 		trimTweetsOutsideOverlay();
 		loadTweetsToSidePanel();
 		clearOverlay();
+		
+		// Update marker clusters as well
+		deleteMarkerClusters();
+		createMarkerClusters();
 
 		$("#go-button").attr('disabled', false);
 		//Enable Go button when done
@@ -45,7 +49,7 @@ function buildQueryString() {
 	 * considering all filters selected.
 	 */
 	var query_string = "";
-	query_string += "?sort_dsc=post_time&limit=500";
+	query_string += "?sort_dsc=post_time&limit=5000";
 
 	//Location
 	if (current_overlay == null && current_overlay_type == null) {
@@ -188,4 +192,25 @@ function deleteMarkerForStatusID(status_id) {
 	delete status_id_list[status_id];
 	delete location_list[status_id];
 	delete tweet_list[status_id];
+}
+
+// MARKER CLUSTER
+
+function markerClusterClick() {
+	/* This function checks if there are markers on the map and forms
+	 * clusters of them. It does nothing if there are no markers. If 
+	 * clusters already exist, this function clears them and plots the
+	 * original markers.
+	 */
+	
+	if (Object.keys(status_id_list).length != 0) {
+		//If there are markers on map
+		if(marker_cluster == null) {
+			createMarkerClusters();
+		}
+		else {
+			//Clusters already exist
+			deleteMarkerClusters();
+		}
+	}
 }

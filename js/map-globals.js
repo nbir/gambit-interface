@@ -61,6 +61,11 @@ var current_overlay_type = null;
 /* Stores the current overlay type being drawn
  */
 
+// CLUSTERING
+var marker_cluster = null;
+/* Object of class MarkerCluster used for on-the-fly clustering
+ * of markers on map.
+ */
 
 var traces_on_map = {};
 var trace_bounds = {};
@@ -83,12 +88,12 @@ function initializeMap() {
 		},
 		panControl : true,
 		panControlOptions : {
-			position : google.maps.ControlPosition.TOP_RIGHT
+			position : google.maps.ControlPosition.RIGHT_CENTER
 		},
 		zoomControl : true,
 		zoomControlOptions : {
 			style : google.maps.ZoomControlStyle.LARGE,
-			position : google.maps.ControlPosition.TOP_RIGHT
+			position : google.maps.ControlPosition.RIGHT_CENTER
 		},
 		scaleControl : true,
 		scaleControlOptions : {
@@ -96,7 +101,7 @@ function initializeMap() {
 		},
 		streetViewControl : true,
 		streetViewControlOptions : {
-			position : google.maps.ControlPosition.TOP_RIGHT
+			position : google.maps.ControlPosition.RIGHT_CENTER
 		}
 	};
 

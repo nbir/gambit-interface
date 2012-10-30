@@ -24,6 +24,8 @@ For license information, see LICENSE
 
 		<!-- GOOGLE MAPS RESOURCES -->
 		<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=drawing,visualization"></script>
+		
+		<script src="markerclusterer/src/markerclusterer_compiled.js"></script>
 
 		<!-- JQUERY RESOURCES -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -79,16 +81,20 @@ For license information, see LICENSE
 						<span class="add-on">Overlay</span>
 						<button id="draw-polygon" class="btn"><i class="icon-pencil"></i></button>
 						<button id="draw-rectangle" class="btn"><i class="icon-edit"></i></button>
-						<button id="draw-circle" class="btn"><i class="icon-ok-circle"></i></button>
-						<button id="draw-line" class="btn"><i class="icon-minus"></i></button>
+						<!-- <button id="draw-circle" class="btn"><i class="icon-ok-circle"></i></button>
+						<button id="draw-line" class="btn"><i class="icon-minus"></i></button> -->
 					</div>
+					
+					<span class="btn-group">
+						<button id="button-cluster-markers" class="btn btn-info"><i class="icon-th"></i></button>
+					</span>
 					
 				</span>
 				
 				<!-- ACTION BUTTONS -->
 				<span class="btn-group pull-right">
-					<button id="side-panel-button" class="btn btn-info"><i class="icon-comment"></i></button>
-					<button id="clear-button" class="btn btn-danger"><i class="icon-trash"></i></button>
+					<button id="side-panel-button" class="btn" data-toggle="button"><i class="icon-comment"></i></button>
+					<button id="clear-button" class="btn"><i class="icon-trash"></i></button>
 					<button id="go-button" class="btn btn-success"><i class="icon-play"></i></button>
 				</span>
 			</div>

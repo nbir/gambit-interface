@@ -26,8 +26,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * [Nibir Bora](http://nibir.me/) | <nbora@usc.edu>
 * [Vladimir Zaytsev](http://zvm.me/) | <zaytsev@usc.edu>
 
----
-
 ## File structure
 
 Following the file structure for the inteface web files.
@@ -52,7 +50,6 @@ Following the file structure for the inteface web files.
 	|	|-	map-globals.js
 	|	|-	toolbar-functions.js
 
----
 
 ## Event structure
 
@@ -115,6 +112,7 @@ This section desctibes the events on the interface and how they are being handle
                TRIM tweet_set OF tweets OUTSIDE overlay
                DELETE overlay
                LOAD tweets ONTO side_panel
+               UPDATE marker_cluster
 ```
 
 ```
@@ -124,3 +122,12 @@ This section desctibes the events on the interface and how they are being handle
      	RESIZE map TO FIT NEW bounds
 ```
 
+```
+	ON marker_cluster_button CLICK:
+		IF markers_on_map IS NOT EMPTY:
+			IF marker_cluster OBJECT IS NULL:
+				INSTANTIATE marker_cluster OBJECT
+			ELSE, IF marker_cluster OBJECT IS NOT NULL:
+				REMOVE marker_cluster OBJECT FROM map
+				REPLOT ALL markers_on_map
+```

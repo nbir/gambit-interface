@@ -32,6 +32,10 @@ function clearAllMarkers() {
 	});
 
 	markers_on_map = [];
+	
+	//Delete marker clusters as well
+	marker_cluster.clearMarkers();
+	marker_cluster = null;
 }
 
 function clearOverlay() {
@@ -50,7 +54,7 @@ function clearAllTraces() {
 		traces_on_map[status_id].setMap(null);
 		delete traces_on_map[status_id];
 	});
-	
+
 	trace_bounds = {};
 }
 
@@ -71,10 +75,9 @@ function clearButtonClick() {
 	clearOverlay();
 	clearAllTraces();
 	clearTweetList();
-	
+
 	map.setZoom(11);
 }
-
 
 function changeMapCenter() {
 	/* This function sets the map center to the latitude and
@@ -223,10 +226,36 @@ function traceUserForStatusID(status_id) {
 
 			traces_on_map[user_id].setPath(trace_path);
 			traces_on_map[user_id].setMap(map);
-		}
-		else {
-			trace_bounds[status_id] = new google.maps.LatLngBounds(new google.maps.LatLng(location_list[status_id].latitude, location_list[status_id].longitude), new google.maps.LatLng(location_list[status_id].latitude-0.000005, location_list[status_id].longitude+0.000005));
+		} else {
+			trace_bounds[status_id] = new google.maps.LatLngBounds(new google.maps.LatLng(location_list[status_id].latitude, location_list[status_id].longitude), new google.maps.LatLng(location_list[status_id].latitude - 0.000005, location_list[status_id].longitude + 0.000005));
 		}
 	}
 	map.fitBounds(trace_bounds[status_id]);
+}
+
+// MARKER CLUSTER
+function createMarkerClusters() {
+	/* This function create marker clusters from markers_on_map
+	*/
+	var temp_marker_array = [];
+
+	$.each(status_id_list, function(status_id, value) {
+		temp_marker_array.push(markers_on_map[status_id]);
+	});
+
+	marker_cluster = new MarkerClusterer(map, temp_marker_array, {
+		averageCenter : true,
+	});
+}
+
+function deleteMarkerClusters() {
+	/* This function deletes any marker clusters and replots
+	* markers_on_map.
+	*/
+	marker_cluster.clearMarkers();
+	marker_cluster = null;
+
+	$.each(status_id_list, function(status_id, value) {
+		markers_on_map[status_id].setMap(map);
+	});
 }
