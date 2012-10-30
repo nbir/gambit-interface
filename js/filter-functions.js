@@ -73,7 +73,10 @@ function buildQueryString() {
 				query_string += "&location_polygon=";
 				var path_coordinates = current_overlay.getPath().b;
 				for (index in path_coordinates) {
-					query_string += path_coordinates[index].Xa + "," + path_coordinates[index].Ya + ",";
+					// To check exact variable names returned by Google.
+					//console.log(path_coordinates[index]);
+					//query_string += path_coordinates[index].Xa + "," + path_coordinates[index].Ya + ",";
+					query_string += path_coordinates[index].Ya + "," + path_coordinates[index].Za + ",";
 				}
 				query_string = query_string.substring(0, query_string.length - 1);
 				break;
