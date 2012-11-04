@@ -53,7 +53,13 @@ function buildQueryString() {
 
 	//Location
 	if (current_overlay == null && current_overlay_type == null) {
-		query_string += "&location_id=" + $('#location-list option:selected').val();
+		if($('#location-list option:selected').val() < 20) {
+			query_string += "&location_id=" + $('#location-list option:selected').val();
+		}
+		else {
+			query_string += "&within_loc_polygon=" + $('#location-list option:selected').val();
+		}
+		
 		if ($("#location-exact").is(":checked")) {
 			query_string += "&location_exact=1";
 		}
