@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="feat_24002">
+        <Style id="stylesel_23509">
+            <IconStyle id="substyle_23509">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11645">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23511">
+            <IconStyle id="substyle_23511">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11646">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23513">
+            <IconStyle id="substyle_23513">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11647">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23515">
+            <IconStyle id="substyle_23515">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11648">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23517">
+            <IconStyle id="substyle_23517">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11649">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23519">
+            <IconStyle id="substyle_23519">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11650">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23521">
+            <IconStyle id="substyle_23521">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11651">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23523">
+            <IconStyle id="substyle_23523">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11652">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23525">
+            <IconStyle id="substyle_23525">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11653">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23527">
+            <IconStyle id="substyle_23527">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11654">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23529">
+            <IconStyle id="substyle_23529">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11655">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23531">
+            <IconStyle id="substyle_23531">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11656">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23533">
+            <IconStyle id="substyle_23533">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11657">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23535">
+            <IconStyle id="substyle_23535">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11658">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23537">
+            <IconStyle id="substyle_23537">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11659">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23539">
+            <IconStyle id="substyle_23539">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11660">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23541">
+            <IconStyle id="substyle_23541">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11661">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23543">
+            <IconStyle id="substyle_23543">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11662">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23545">
+            <IconStyle id="substyle_23545">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11663">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23547">
+            <IconStyle id="substyle_23547">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11664">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23549">
+            <IconStyle id="substyle_23549">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11665">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23551">
+            <IconStyle id="substyle_23551">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11666">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23553">
+            <IconStyle id="substyle_23553">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11667">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23555">
+            <IconStyle id="substyle_23555">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11668">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23557">
+            <IconStyle id="substyle_23557">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11669">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23559">
+            <IconStyle id="substyle_23559">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11670">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23561">
+            <IconStyle id="substyle_23561">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11671">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23563">
+            <IconStyle id="substyle_23563">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11672">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23565">
+            <IconStyle id="substyle_23565">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11673">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23567">
+            <IconStyle id="substyle_23567">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11674">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23569">
+            <IconStyle id="substyle_23569">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11675">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23571">
+            <IconStyle id="substyle_23571">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11676">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23573">
+            <IconStyle id="substyle_23573">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11677">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23575">
+            <IconStyle id="substyle_23575">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11678">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23577">
+            <IconStyle id="substyle_23577">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11679">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23579">
+            <IconStyle id="substyle_23579">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11680">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23581">
+            <IconStyle id="substyle_23581">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11681">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23583">
+            <IconStyle id="substyle_23583">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11682">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23585">
+            <IconStyle id="substyle_23585">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11683">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23587">
+            <IconStyle id="substyle_23587">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11684">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23589">
+            <IconStyle id="substyle_23589">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11685">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23591">
+            <IconStyle id="substyle_23591">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11686">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23593">
+            <IconStyle id="substyle_23593">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11687">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23595">
+            <IconStyle id="substyle_23595">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11688">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23597">
+            <PolyStyle id="substyle_23597">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>5</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="stylesel_23598">
+            <IconStyle id="substyle_23598">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11689">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/blu-stars.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23600">
+            <PolyStyle id="substyle_23600">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>5</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="stylesel_23601">
+            <IconStyle id="substyle_23601">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11690">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/blu-stars.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_23603">
+            <IconStyle id="substyle_23603">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_11691">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/red-stars.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Placemark id="feat_24004">
+            <name>1</name>
+            <styleUrl>#stylesel_23509</styleUrl>
+            <Point id="geom_23819">
+                <coordinates>-117.94245397,34.05077382,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24006">
+            <name>1</name>
+            <styleUrl>#stylesel_23511</styleUrl>
+            <Point id="geom_23821">
+                <coordinates>-117.93578707,34.05406859,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24008">
+            <name>1</name>
+            <styleUrl>#stylesel_23513</styleUrl>
+            <Point id="geom_23823">
+                <coordinates>-117.93867717,34.05489667,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24010">
+            <name>1</name>
+            <styleUrl>#stylesel_23515</styleUrl>
+            <Point id="geom_23825">
+                <coordinates>-117.9384542,34.05506554,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24012">
+            <name>1</name>
+            <styleUrl>#stylesel_23517</styleUrl>
+            <Point id="geom_23827">
+                <coordinates>-117.8812623,33.91108494,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24014">
+            <name>1</name>
+            <styleUrl>#stylesel_23519</styleUrl>
+            <Point id="geom_23829">
+                <coordinates>-117.9342052,34.0519193,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24016">
+            <name>1</name>
+            <styleUrl>#stylesel_23521</styleUrl>
+            <Point id="geom_23831">
+                <coordinates>-117.9295808,34.04330257,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24018">
+            <name>1</name>
+            <styleUrl>#stylesel_23523</styleUrl>
+            <Point id="geom_23833">
+                <coordinates>-117.83808113,34.06812424,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24020">
+            <name>1</name>
+            <styleUrl>#stylesel_23525</styleUrl>
+            <Point id="geom_23835">
+                <coordinates>-118.00095552,34.02834169,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24022">
+            <name>1</name>
+            <styleUrl>#stylesel_23527</styleUrl>
+            <Point id="geom_23837">
+                <coordinates>-118.04481831,34.03834897,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24024">
+            <name>1</name>
+            <styleUrl>#stylesel_23529</styleUrl>
+            <Point id="geom_23839">
+                <coordinates>-118.06991759,33.99044366,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24026">
+            <name>1</name>
+            <styleUrl>#stylesel_23531</styleUrl>
+            <Point id="geom_23841">
+                <coordinates>-118.15137926,33.87406228,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24028">
+            <name>1</name>
+            <styleUrl>#stylesel_23533</styleUrl>
+            <Point id="geom_23843">
+                <coordinates>-118.06930252,33.99356702,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24030">
+            <name>1</name>
+            <styleUrl>#stylesel_23535</styleUrl>
+            <Point id="geom_23845">
+                <coordinates>-118.04256439,34.03780318,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24032">
+            <name>1</name>
+            <styleUrl>#stylesel_23537</styleUrl>
+            <Point id="geom_23847">
+                <coordinates>-117.95820032,34.02050881,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24034">
+            <name>1</name>
+            <styleUrl>#stylesel_23539</styleUrl>
+            <Point id="geom_23849">
+                <coordinates>-117.94905848,34.04593716,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24036">
+            <name>1</name>
+            <styleUrl>#stylesel_23541</styleUrl>
+            <Point id="geom_23851">
+                <coordinates>-117.94251397,34.05094956,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24038">
+            <name>1</name>
+            <styleUrl>#stylesel_23543</styleUrl>
+            <Point id="geom_23853">
+                <coordinates>-118.7116127,34.60180818,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24040">
+            <name>1</name>
+            <styleUrl>#stylesel_23545</styleUrl>
+            <Point id="geom_23855">
+                <coordinates>-118.47834744,34.30195111,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24042">
+            <name>1</name>
+            <styleUrl>#stylesel_23547</styleUrl>
+            <Point id="geom_23857">
+                <coordinates>-119.64993581,36.59536694,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24044">
+            <name>1</name>
+            <styleUrl>#stylesel_23549</styleUrl>
+            <Point id="geom_23859">
+                <coordinates>-117.1774192,33.6851932,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24046">
+            <name>1</name>
+            <styleUrl>#stylesel_23551</styleUrl>
+            <Point id="geom_23861">
+                <coordinates>-117.1709892,33.6733268,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24048">
+            <name>1</name>
+            <styleUrl>#stylesel_23553</styleUrl>
+            <Point id="geom_23863">
+                <coordinates>-117.1725967,33.6762934,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24050">
+            <name>1</name>
+            <styleUrl>#stylesel_23555</styleUrl>
+            <Point id="geom_23865">
+                <coordinates>-117.1774192,33.6851932,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24052">
+            <name>1</name>
+            <styleUrl>#stylesel_23557</styleUrl>
+            <Point id="geom_23867">
+                <coordinates>-117.1774192,33.6851932,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24054">
+            <name>1</name>
+            <styleUrl>#stylesel_23559</styleUrl>
+            <Point id="geom_23869">
+                <coordinates>-117.1774192,33.6851932,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24056">
+            <name>1</name>
+            <styleUrl>#stylesel_23561</styleUrl>
+            <Point id="geom_23871">
+                <coordinates>-117.1725967,33.6762934,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24058">
+            <name>1</name>
+            <styleUrl>#stylesel_23563</styleUrl>
+            <Point id="geom_23873">
+                <coordinates>-117.1677743,33.6673935,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24060">
+            <name>1</name>
+            <styleUrl>#stylesel_23565</styleUrl>
+            <Point id="geom_23875">
+                <coordinates>-117.1754196,33.685162,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24062">
+            <name>1</name>
+            <styleUrl>#stylesel_23567</styleUrl>
+            <Point id="geom_23877">
+                <coordinates>-117.1716322,33.6745134,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24064">
+            <name>1</name>
+            <styleUrl>#stylesel_23569</styleUrl>
+            <Point id="geom_23879">
+                <coordinates>-117.1774192,33.6851932,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24066">
+            <name>1</name>
+            <styleUrl>#stylesel_23571</styleUrl>
+            <Point id="geom_23881">
+                <coordinates>-117.1774192,33.6851932,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24068">
+            <name>1</name>
+            <styleUrl>#stylesel_23573</styleUrl>
+            <Point id="geom_23883">
+                <coordinates>-117.1774192,33.6851932,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24070">
+            <name>1</name>
+            <styleUrl>#stylesel_23575</styleUrl>
+            <Point id="geom_23885">
+                <coordinates>-117.18858788,33.68563527,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24072">
+            <name>1</name>
+            <styleUrl>#stylesel_23577</styleUrl>
+            <Point id="geom_23887">
+                <coordinates>-117.18715929,33.6851297,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24074">
+            <name>1</name>
+            <styleUrl>#stylesel_23579</styleUrl>
+            <Point id="geom_23889">
+                <coordinates>-117.13501964,33.5028744,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24076">
+            <name>1</name>
+            <styleUrl>#stylesel_23581</styleUrl>
+            <Point id="geom_23891">
+                <coordinates>-117.13503594,33.50284595,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24078">
+            <name>1</name>
+            <styleUrl>#stylesel_23583</styleUrl>
+            <Point id="geom_23893">
+                <coordinates>-117.13504543,33.50286794,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24080">
+            <name>1</name>
+            <styleUrl>#stylesel_23585</styleUrl>
+            <Point id="geom_23895">
+                <coordinates>-117.16722694,33.68548746,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24082">
+            <name>1</name>
+            <styleUrl>#stylesel_23587</styleUrl>
+            <Point id="geom_23897">
+                <coordinates>-117.1817808,33.6869724,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24084">
+            <name>1</name>
+            <styleUrl>#stylesel_23589</styleUrl>
+            <Point id="geom_23899">
+                <coordinates>-117.1817808,33.6869724,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24086">
+            <name>1</name>
+            <styleUrl>#stylesel_23591</styleUrl>
+            <Point id="geom_23901">
+                <coordinates>-118.00020218,33.84297403,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24088">
+            <name>1</name>
+            <styleUrl>#stylesel_23593</styleUrl>
+            <Point id="geom_23903">
+                <coordinates>-117.94309165,34.05058971,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24090">
+            <name>1</name>
+            <styleUrl>#stylesel_23595</styleUrl>
+            <Point id="geom_23905">
+                <coordinates>-118.62549579,34.49822233,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24092">
+            <name>30</name>
+            <styleUrl>#stylesel_23597</styleUrl>
+            <Polygon id="geom_23907">
+                <outerBoundaryIs>
+                    <LinearRing id="geom_23908">
+                        <coordinates>-117.16784231,33.67478048,0.0 -117.16784231,33.6750432,0.0 -117.16811046,33.6750432,0.0 -117.16811046,33.67478048,0.0 -117.16784231,33.67478048,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="feat_24094">
+            <name>30</name>
+            <styleUrl>#stylesel_23598</styleUrl>
+            <Point id="geom_23909">
+                <coordinates>-117.167893997,33.6748788403,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24096">
+            <name>231</name>
+            <styleUrl>#stylesel_23600</styleUrl>
+            <Polygon id="geom_23911">
+                <outerBoundaryIs>
+                    <LinearRing id="geom_23912">
+                        <coordinates>-117.9440014,34.04674336,0.0 -117.9440014,34.0472808,0.0 -117.9452597,34.0472808,0.0 -117.9452597,34.04674336,0.0 -117.9440014,34.04674336,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="feat_24098">
+            <name>231</name>
+            <styleUrl>#stylesel_23601</styleUrl>
+            <Point id="geom_23913">
+                <coordinates>-117.945048761,34.0470323289,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_24100">
+            <name>Home</name>
+            <styleUrl>#stylesel_23603</styleUrl>
+            <Point id="geom_23915">
+                <coordinates>-117.176009713,33.7065408029,0.0</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>

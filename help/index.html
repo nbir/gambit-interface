@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<style>
+*{margin:0;padding:0;}
+body {
+	font:13.34px helvetica,arial,freesans,clean,sans-serif;
+	color:black;
+	line-height:1.4em;
+	background-color: #F8F8F8;
+	padding: 0.7em;
+}
+p {
+	margin:1em 0;
+	line-height:1.5em;
+}
+table {
+	font-size:inherit;
+	font:100%;
+	margin:1em;
+}
+table th{border-bottom:1px solid #bbb;padding:.2em 1em;}
+table td{border-bottom:1px solid #ddd;padding:.2em 1em;}
+input[type=text],input[type=password],input[type=image],textarea{font:99% helvetica,arial,freesans,sans-serif;}
+select,option{padding:0 .25em;}
+optgroup{margin-top:.5em;}
+pre,code{font:12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;}
+pre {
+	margin:1em 0;
+	font-size:12px;
+	background-color:#eee;
+	border:1px solid #ddd;
+	padding:5px;
+	line-height:1.5em;
+	color:#444;
+	overflow:auto;
+	-webkit-box-shadow:rgba(0,0,0,0.07) 0 1px 2px inset;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;border-radius:3px;
+}
+pre code {
+	padding:0;
+	font-size:12px;
+	background-color:#eee;
+	border:none;
+}
+code {
+	font-size:12px;
+	background-color:#f8f8ff;
+	color:#444;
+	padding:0 .2em;
+	border:1px solid #dedede;
+}
+img{border:0;max-width:100%;}
+abbr{border-bottom:none;}
+a{color:#4183c4;text-decoration:none;}
+a:hover{text-decoration:underline;}
+a code,a:link code,a:visited code{color:#4183c4;}
+h2,h3{margin:1em 0;}
+h1,h2,h3,h4,h5,h6{border:0;}
+h1{font-size:170%;border-top:4px solid #aaa;padding-top:.5em;margin-top:1.5em;}
+h1:first-child{margin-top:0;padding-top:.25em;border-top:none;}
+h2{font-size:150%;margin-top:1.5em;border-top:4px solid #e0e0e0;padding-top:.5em;}
+h3{margin-top:1em;}
+hr{border:1px solid #ddd;}
+ul{margin:1em 0 1em 2em;}
+ol{margin:1em 0 1em 2em;}
+ul li,ol li{margin-top:.5em;margin-bottom:.5em;}
+ul ul,ul ol,ol ol,ol ul{margin-top:0;margin-bottom:0;}
+blockquote{margin:1em 0;border-left:5px solid #ddd;padding-left:.6em;color:#555;}
+dt{font-weight:bold;margin-left:1em;}
+dd{margin-left:2em;margin-bottom:1em;}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>Gambit Visualizer (*Twitter*)</title>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<h1>Gambit Visualizer (<em>Twitter</em>)</h1>
+
+<p><a href="http://nibir.me">Nibir Bora</a> (<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;&#58;&#110;&#x62;&#111;&#114;&#97;&#x40;&#117;&#x73;&#x63;&#46;&#x65;&#100;&#117;">&#110;&#x62;&#111;&#x72;&#x61;&#x40;&#x75;&#115;&#99;&#x2e;&#x65;&#x64;&#117;</a>) |
+<a href="http://zvm.me">Vladimir Zaytsev</a> (<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#122;&#x61;&#121;&#x74;&#x73;&#x65;&#x76;&#x40;&#x75;&#x73;&#x63;&#x2e;&#101;&#100;&#x75;">&#x7a;&#x61;&#121;&#x74;&#x73;&#x65;&#118;&#64;&#117;&#x73;&#99;&#46;&#x65;&#100;&#x75;</a>)</p>
+
+<p><a href="http://cbg.isi.edu">Computational Behavior Group</a>, ISI, 4676 Admiralty Way, Marina del Rey, CA 90292.</p>
+
+<hr />
+
+<h2>Query Tool</h2>
+
+<p>The <strong>query tool</strong> is an interface to all the geotagged tweets collected during the course of the project (September 29, 2012 to today). This tool can be used to visualize tweets on the map using various filters, and also perform clustering on them to identify areas of high tweeting. The results of the query are plotted as clickable <code>red dots</code> (markers) on the map. On clicking them, it reveals a dialog-box showing the tweet time and text.</p>
+
+<p>Each location in the <code>location</code> drop-down menu under the <em>filter</em> section defines a bounding box for a city, or any custom locations. Location names starting with <code>HBK_</code> define gang territories within the Hollenbeck area in Los Angeles.</p>
+
+<p><img src="../help/img/query.png" title="Query results" alt="Query results" /></p>
+
+<p>The following are the querry filters that can be used to view the data:</p>
+
+<p><strong>Filter</strong></p>
+
+<ul>
+<li><code>location</code> - specify the location to view tweets from.</li>
+<li><code>exact</code> - view only those tweets that are strictly within the location's bounding box.</li>
+<li><code>from date</code> / <code>to date</code> - specify date bounds to view tweets from.</li>
+</ul>
+
+
+<p><strong>Overlay</strong></p>
+
+<ul>
+<li><code>polygon</code> / <code>pencil</code> - draw an exact bounding polygon on the map to view tweets from.</li>
+<li><code>rectangle</code> / <code>box</code> - draw an exact bounding rectangle on the map to view tweets from.</li>
+</ul>
+
+
+<p>Note that the <code>exact</code>, <code>from date</code>, <code>to date</code> and <em>overlay</em> filters are optional and my be skipped. After the filters had been set, press the green <code>play button</code> to load tweets on the map.</p>
+
+<p><strong>Trim tool</strong></p>
+
+<p><img src="../help/img/query-overlay.png" title="Trim markers on map" alt="Trim markers on map" /></p>
+
+<p>Once there are markers on the map, the <em>overlay</em> drawing tools can be used to select the portion of markers (red dots) on map and remove the remaining. Simply click on the <code>polygon</code> / <code>pencil</code> or the <code>rectangle</code> / <code>box</code> button to draw an overlay and click on the green <code>play button</code> again.</p>
+
+<p><strong>Side panel</strong></p>
+
+<p><img src="../help/img/query-side-panel.png" title="Side panel" alt="Side panel" /></p>
+
+<p>The tweet content (tweet time and text) of all marsers on the map can be viewed on the side panel by clicking on the <code>Side Panel</code> button. On using the <em>trim</em> feature, the corresponding changes are made to the sidepanel content too.</p>
+
+<p><strong>Marker Clustering</strong></p>
+
+<p><img src="../help/img/query-cluster.png" title="Marker clusters" alt="Marker clusters" /></p>
+
+<p>Marker clustering switches to a clustered representation of the markers on map. These clusters are represented by a circular graphic of varying size, corresponding the the number of markers in that cluster. The center of each graphic shows a number denoting the number of markers in that cluster.</p>
+
+<p>To switch to clustered view, simply click on the <code>Cluster Markers</code> button. Use the same button to switch back to the marker view. The Marker clustering tool works in sync with the trim tool, i.e. the trim tool can be used on the clustered view as well.</p>
+
+<p>The <code>flag</code> / <code>trace</code> button on the tweet dialog box or the side panel draws a trace of the perticular user using only the tweets already on map.</p>
+
+<p>The <code>Clear</code> button clears all markers and overlays on map, and also clears the side panel.</p>
+
+<h2>User Displacement</h2>
+
+<p>The <strong>user displacement</strong> tool is used to visualize the user movemement patterns of the 100 most tweeting users and 100 highly mobile users in Los Angeles during the month of October, 2012. This tool has 2 sections- <em>tweeting requency</em> and <em>average displacement</em>. Only one of them can be used at a time.</p>
+
+<p><img src="../help/img/disp-lines.png" title="Displacement lines" alt="Displacement lines" /></p>
+
+<p>Type in a rank in the <code>User rank</code> field and click on <code>Disp. lines</code> and/or <code>Disp. overlay</code> button. The <code>Disp. lines</code> button shows line from the user's home location to the places s/he had visited. The <em>blue</em> lines denote frequently visited places, whereas the green lines show places visited once.</p>
+
+<p><img src="../help/img/disp-lines-overlay.png" title="Displacement lines and overlay" alt="Displacement lines and overlay" /></p>
+
+<p>The <code>Disp. overlay</code> button places markers on the map instead of lines. The <em>red</em> marker is the user's home location. The <em>blue</em> markers show frequently visited location; clicking on a blue markers shows the number of times that location was visited.</p>
+
+<p>Both the <code>Disp. lines</code> and the <code>Disp. overlay</code> buttons are toggle button, so they can be used simultaneously or in isolation. The <code>Clear</code> / <code>thrash</code> button clears markers and lines from the map.</p>
+
+<h2>Trace Tool</h2>
+
+<p>The <strong>trace tool</strong> is used to visualize user traces on a certain day. A trace is defined as a sequence of geotags corresponding to a single person's movement pattern on a day. Traces are shown as blue and red lines on  the map. The blue portion of the line correspond to day time tweeting and the red during night. Our database contains traces for the month of October 2012, for the cities Los Angeles, New York and London, and for the month of November 2012, for the cities Los Angeles, New York and Chicago.</p>
+
+<p><img src="../help/img/trace.png" title="User traces" alt="User traces" /></p>
+
+<p>The following are the query filters that can be used to view the traces:</p>
+
+<ul>
+<li><code>from date</code> / <code>to date</code> - specify date bounds to view tweets from.</li>
+<li><code>location</code> - specify the location to view tweets from.</li>
+<li><code>minimum points</code> - minimum number of points in a trace.</li>
+<li><code>order</code> - order of the traces to be viewed.</li>
+<li><code>number of traces</code> - number of traces to load</li>
+</ul>
+
+
+<p>Note that the <code>from date</code> and <code>to date</code> filters are optional and my be skipped.  Click on the <code>Load Traces</code> button after setting the filter options. this loads the traces, and fills some trace ids into the dropdown menu in the <code>Show trace</code> section. The <code>Clear List</code> button clears the same dropdown menu.</p>
+
+<p>To view a trace on map, select in from the dropdown menu and click on the <code>Show</code> button. Click <code>Show All</code> to show all traces in the dropdown menu. The <code>Clear</code> / <code>thrash</code> button deletes all traces on the map and also clears the dropdown menu.</p>
+
+<p>The <em>Load traces</em> section can be used multiple time without clearing traces from the map.</p>
+
+<hr />
+</body>
+</html>

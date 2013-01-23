@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="feat_17118">
+        <Style id="stylesel_16703">
+            <PolyStyle id="substyle_16703">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>5</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="stylesel_16704">
+            <IconStyle id="substyle_16704">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_8233">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/blu-stars.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_16706">
+            <PolyStyle id="substyle_16706">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>5</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="stylesel_16707">
+            <IconStyle id="substyle_16707">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_8234">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/blu-stars.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_16709">
+            <PolyStyle id="substyle_16709">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>5</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="stylesel_16710">
+            <IconStyle id="substyle_16710">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_8235">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/blu-stars.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_16712">
+            <PolyStyle id="substyle_16712">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>5</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="stylesel_16713">
+            <IconStyle id="substyle_16713">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_8236">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/blu-stars.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_16715">
+            <IconStyle id="substyle_16715">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_8237">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/red-stars.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Placemark id="feat_17120">
+            <name>748</name>
+            <styleUrl>#stylesel_16703</styleUrl>
+            <Polygon id="geom_16999">
+                <outerBoundaryIs>
+                    <LinearRing id="geom_17000">
+                        <coordinates>-118.16773014,34.16055753,0.0 -118.16773014,34.16179508,0.0 -118.16864209,34.16179508,0.0 -118.16864209,34.16055753,0.0 -118.16773014,34.16055753,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="feat_17122">
+            <name>748</name>
+            <styleUrl>#stylesel_16704</styleUrl>
+            <Point id="geom_17001">
+                <coordinates>-118.168018871,34.1607961777,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_17124">
+            <name>550</name>
+            <styleUrl>#stylesel_16706</styleUrl>
+            <Polygon id="geom_17003">
+                <outerBoundaryIs>
+                    <LinearRing id="geom_17004">
+                        <coordinates>-118.2864769,34.01347082,0.0 -118.2864769,34.01361311,0.0 -118.28853683,34.01361311,0.0 -118.28853683,34.01347082,0.0 -118.2864769,34.01347082,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="feat_17126">
+            <name>550</name>
+            <styleUrl>#stylesel_16707</styleUrl>
+            <Point id="geom_17005">
+                <coordinates>-118.286671657,34.0134842729,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_17128">
+            <name>429</name>
+            <styleUrl>#stylesel_16709</styleUrl>
+            <Polygon id="geom_17007">
+                <outerBoundaryIs>
+                    <LinearRing id="geom_17008">
+                        <coordinates>-117.88341599,33.79944511,0.0 -117.88341599,33.7997839,0.0 -117.8836091,33.7997839,0.0 -117.8836091,33.79944511,0.0 -117.88341599,33.79944511,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="feat_17130">
+            <name>429</name>
+            <styleUrl>#stylesel_16710</styleUrl>
+            <Point id="geom_17009">
+                <coordinates>-117.883515771,33.7995802765,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_17132">
+            <name>385</name>
+            <styleUrl>#stylesel_16712</styleUrl>
+            <Polygon id="geom_17011">
+                <outerBoundaryIs>
+                    <LinearRing id="geom_17012">
+                        <coordinates>-118.23961334,34.07323873,0.0 -118.23961334,34.07449177,0.0 -118.24007468,34.07449177,0.0 -118.24007468,34.07323873,0.0 -118.23961334,34.07323873,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="feat_17134">
+            <name>385</name>
+            <styleUrl>#stylesel_16713</styleUrl>
+            <Point id="geom_17013">
+                <coordinates>-118.240013567,34.0734047171,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_17136">
+            <name>Home</name>
+            <styleUrl>#stylesel_16715</styleUrl>
+            <Point id="geom_17015">
+                <coordinates>-118.266838125,34.0432973128,0.0</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>

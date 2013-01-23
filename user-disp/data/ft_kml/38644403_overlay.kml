@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="feat_20209">
+        <Style id="stylesel_19677">
+            <IconStyle id="substyle_19677">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_9687">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/red-stars.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Placemark id="feat_20211">
+            <name>Home</name>
+            <styleUrl>#stylesel_19677</styleUrl>
+            <Point id="geom_20056">
+                <coordinates>-118.333333,34.1,0.0</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>

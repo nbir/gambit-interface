@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="feat_3407">
+        <Style id="stylesel_3297">
+            <PolyStyle id="substyle_3297">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>5</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="stylesel_3298">
+            <IconStyle id="substyle_3298">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_1624">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/blu-stars.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_3300">
+            <IconStyle id="substyle_3300">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_1625">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/red-stars.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Placemark id="feat_3409">
+            <name>72</name>
+            <styleUrl>#stylesel_3297</styleUrl>
+            <Polygon id="geom_3366">
+                <outerBoundaryIs>
+                    <LinearRing id="geom_3367">
+                        <coordinates>-121.33790104,38.03513067,0.0 -121.33790104,38.03551993,0.0 -121.33878183,38.03551993,0.0 -121.33878183,38.03513067,0.0 -121.33790104,38.03513067,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="feat_3411">
+            <name>72</name>
+            <styleUrl>#stylesel_3298</styleUrl>
+            <Point id="geom_3368">
+                <coordinates>-121.338474826,38.0353390972,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_3413">
+            <name>Home</name>
+            <styleUrl>#stylesel_3300</styleUrl>
+            <Point id="geom_3370">
+                <coordinates>-121.404421961,37.6992657287,0.0</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>

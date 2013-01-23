@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="feat_12634">
+        <Style id="stylesel_12396">
+            <LineStyle id="substyle_12396">
+                <color>ffff0000</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_12399">
+            <LineStyle id="substyle_12399">
+                <color>ffff0000</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Placemark id="feat_12638">
+            <name>19</name>
+            <description>19 frequently visited</description>
+            <styleUrl>#stylesel_12396</styleUrl>
+            <LineString id="geom_12547">
+                <coordinates>-117.232286855,33.955035253,0.0 -117.283049,34.159598,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_12642">
+            <name>18</name>
+            <description>18 frequently visited</description>
+            <styleUrl>#stylesel_12399</styleUrl>
+            <LineString id="geom_12551">
+                <coordinates>-117.232286855,33.955035253,0.0 -117.627129,34.098375,0.0</coordinates>
+            </LineString>
+        </Placemark>
+    </Document>
+</kml>

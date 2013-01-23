@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="feat_18576">
+        <Style id="stylesel_18195">
+            <LineStyle id="substyle_18195">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_18197">
+            <LineStyle id="substyle_18197">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_18200">
+            <LineStyle id="substyle_18200">
+                <color>ffff0000</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_18203">
+            <LineStyle id="substyle_18203">
+                <color>ffff0000</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_18206">
+            <LineStyle id="substyle_18206">
+                <color>ffff0000</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Placemark id="feat_18578">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_18195</styleUrl>
+            <LineString id="geom_18439">
+                <coordinates>-118.436331522,34.2702411335,0.0 -118.52690308,34.23798804,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_18580">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_18197</styleUrl>
+            <LineString id="geom_18441">
+                <coordinates>-118.436331522,34.2702411335,0.0 -118.19111436,34.68522807,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_18584">
+            <name>41</name>
+            <description>41 frequently visited</description>
+            <styleUrl>#stylesel_18200</styleUrl>
+            <LineString id="geom_18445">
+                <coordinates>-118.436331522,34.2702411335,0.0 -118.120130515,34.6895544629,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_18588">
+            <name>14</name>
+            <description>14 frequently visited</description>
+            <styleUrl>#stylesel_18203</styleUrl>
+            <LineString id="geom_18449">
+                <coordinates>-118.436331522,34.2702411335,0.0 -118.10300685,34.6995102293,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_18592">
+            <name>16</name>
+            <description>16 frequently visited</description>
+            <styleUrl>#stylesel_18206</styleUrl>
+            <LineString id="geom_18453">
+                <coordinates>-118.436331522,34.2702411335,0.0 -118.530610848,34.2388705288,0.0</coordinates>
+            </LineString>
+        </Placemark>
+    </Document>
+</kml>

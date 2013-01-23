@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="feat_441">
+        <Style id="stylesel_421">
+            <LineStyle id="substyle_421">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_423">
+            <LineStyle id="substyle_423">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_425">
+            <LineStyle id="substyle_425">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_427">
+            <LineStyle id="substyle_427">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_429">
+            <LineStyle id="substyle_429">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_431">
+            <LineStyle id="substyle_431">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_433">
+            <LineStyle id="substyle_433">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_435">
+            <LineStyle id="substyle_435">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_437">
+            <LineStyle id="substyle_437">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_439">
+            <LineStyle id="substyle_439">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_441">
+            <LineStyle id="substyle_441">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_443">
+            <LineStyle id="substyle_443">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_445">
+            <LineStyle id="substyle_445">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_447">
+            <LineStyle id="substyle_447">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_449">
+            <LineStyle id="substyle_449">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_451">
+            <LineStyle id="substyle_451">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_453">
+            <LineStyle id="substyle_453">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_455">
+            <LineStyle id="substyle_455">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_457">
+            <LineStyle id="substyle_457">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_459">
+            <LineStyle id="substyle_459">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_461">
+            <LineStyle id="substyle_461">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_463">
+            <LineStyle id="substyle_463">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_465">
+            <LineStyle id="substyle_465">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_467">
+            <LineStyle id="substyle_467">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_469">
+            <LineStyle id="substyle_469">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_471">
+            <LineStyle id="substyle_471">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_473">
+            <LineStyle id="substyle_473">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_475">
+            <LineStyle id="substyle_475">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_477">
+            <LineStyle id="substyle_477">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_479">
+            <LineStyle id="substyle_479">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_481">
+            <LineStyle id="substyle_481">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_483">
+            <LineStyle id="substyle_483">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_485">
+            <LineStyle id="substyle_485">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_487">
+            <LineStyle id="substyle_487">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_489">
+            <LineStyle id="substyle_489">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_491">
+            <LineStyle id="substyle_491">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_493">
+            <LineStyle id="substyle_493">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_495">
+            <LineStyle id="substyle_495">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_497">
+            <LineStyle id="substyle_497">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_499">
+            <LineStyle id="substyle_499">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_501">
+            <LineStyle id="substyle_501">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_503">
+            <LineStyle id="substyle_503">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_505">
+            <LineStyle id="substyle_505">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_507">
+            <LineStyle id="substyle_507">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_509">
+            <LineStyle id="substyle_509">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_511">
+            <LineStyle id="substyle_511">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_513">
+            <LineStyle id="substyle_513">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_515">
+            <LineStyle id="substyle_515">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_517">
+            <LineStyle id="substyle_517">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_519">
+            <LineStyle id="substyle_519">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_521">
+            <LineStyle id="substyle_521">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_523">
+            <LineStyle id="substyle_523">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_525">
+            <LineStyle id="substyle_525">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_527">
+            <LineStyle id="substyle_527">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_529">
+            <LineStyle id="substyle_529">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_531">
+            <LineStyle id="substyle_531">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_534">
+            <LineStyle id="substyle_534">
+                <color>ffff0000</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_537">
+            <LineStyle id="substyle_537">
+                <color>ffff0000</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_540">
+            <LineStyle id="substyle_540">
+                <color>ffff0000</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_543">
+            <LineStyle id="substyle_543">
+                <color>ffff0000</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Placemark id="feat_443">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_421</styleUrl>
+            <LineString id="geom_434">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.46557617,34.19987685,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_445">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_423</styleUrl>
+            <LineString id="geom_436">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.57794262,34.23361746,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_447">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_425</styleUrl>
+            <LineString id="geom_438">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.44933271,34.19223631,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_449">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_427</styleUrl>
+            <LineString id="geom_440">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.43969469,34.18652415,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_451">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_429</styleUrl>
+            <LineString id="geom_442">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.45792412,34.18962467,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_453">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_431</styleUrl>
+            <LineString id="geom_444">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.43182325,34.20163381,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_455">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_433</styleUrl>
+            <LineString id="geom_446">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.44933271,34.19223631,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_457">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_435</styleUrl>
+            <LineString id="geom_448">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.44040211,34.19938963,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_459">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_437</styleUrl>
+            <LineString id="geom_450">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.38135052,34.16661646,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_461">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_439</styleUrl>
+            <LineString id="geom_452">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.38191145,34.16682144,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_463">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_441</styleUrl>
+            <LineString id="geom_454">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.40504103,34.17478922,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_465">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_443</styleUrl>
+            <LineString id="geom_456">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.43148724,34.18693851,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_467">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_445</styleUrl>
+            <LineString id="geom_458">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.43148724,34.18693851,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_469">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_447</styleUrl>
+            <LineString id="geom_460">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.43969469,34.18652415,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_471">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_449</styleUrl>
+            <LineString id="geom_462">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.44253063,34.20754331,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_473">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_451</styleUrl>
+            <LineString id="geom_464">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.43148724,34.18693851,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_475">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_453</styleUrl>
+            <LineString id="geom_466">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.43969469,34.18652415,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_477">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_455</styleUrl>
+            <LineString id="geom_468">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.38062525,34.16435712,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_479">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_457</styleUrl>
+            <LineString id="geom_470">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.44933271,34.19223631,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_481">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_459</styleUrl>
+            <LineString id="geom_472">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.45225394,34.18252266,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_483">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_461</styleUrl>
+            <LineString id="geom_474">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.44997427,34.19194679,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_485">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_463</styleUrl>
+            <LineString id="geom_476">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.588785,34.235153,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_487">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_465</styleUrl>
+            <LineString id="geom_478">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.58820132,34.24304356,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_489">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_467</styleUrl>
+            <LineString id="geom_480">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.43733788,34.15681103,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_491">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_469</styleUrl>
+            <LineString id="geom_482">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.43806114,34.15713095,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_493">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_471</styleUrl>
+            <LineString id="geom_484">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.43820995,34.15712583,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_495">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_473</styleUrl>
+            <LineString id="geom_486">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.43817054,34.15711426,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_497">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_475</styleUrl>
+            <LineString id="geom_488">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.44823837,34.15333072,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_499">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_477</styleUrl>
+            <LineString id="geom_490">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.42914307,34.1926817,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_501">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_479</styleUrl>
+            <LineString id="geom_492">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.44933271,34.19223631,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_503">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_481</styleUrl>
+            <LineString id="geom_494">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.5765113,34.23640471,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_505">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_483</styleUrl>
+            <LineString id="geom_496">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.50740702,34.22918229,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_507">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_485</styleUrl>
+            <LineString id="geom_498">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.46320582,34.20028248,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_509">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_487</styleUrl>
+            <LineString id="geom_500">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.46557617,34.19987685,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_511">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_489</styleUrl>
+            <LineString id="geom_502">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.43994507,34.19790789,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_513">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_491</styleUrl>
+            <LineString id="geom_504">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.37903502,34.16893346,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_515">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_493</styleUrl>
+            <LineString id="geom_506">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.38166453,34.16620573,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_517">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_495</styleUrl>
+            <LineString id="geom_508">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.38062525,34.16435712,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_519">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_497</styleUrl>
+            <LineString id="geom_510">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.37938833,34.16692195,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_521">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_499</styleUrl>
+            <LineString id="geom_512">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.45047006,34.190451,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_523">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_501</styleUrl>
+            <LineString id="geom_514">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.43148724,34.18693851,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_525">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_503</styleUrl>
+            <LineString id="geom_516">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.43969469,34.18652415,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_527">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_505</styleUrl>
+            <LineString id="geom_518">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.43995422,34.18661276,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_529">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_507</styleUrl>
+            <LineString id="geom_520">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.44001186,34.18670745,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_531">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_509</styleUrl>
+            <LineString id="geom_522">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.44933271,34.19223631,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_533">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_511</styleUrl>
+            <LineString id="geom_524">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.44992337,34.19255233,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_535">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_513</styleUrl>
+            <LineString id="geom_526">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.45736787,34.20102192,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_537">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_515</styleUrl>
+            <LineString id="geom_528">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.4489985,34.20709415,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_539">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_517</styleUrl>
+            <LineString id="geom_530">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.44900734,34.20707478,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_541">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_519</styleUrl>
+            <LineString id="geom_532">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.44902807,34.20707507,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_543">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_521</styleUrl>
+            <LineString id="geom_534">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.44902738,34.20703984,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_545">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_523</styleUrl>
+            <LineString id="geom_536">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.44933271,34.19223631,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_547">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_525</styleUrl>
+            <LineString id="geom_538">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.58889088,34.23719966,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_549">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_527</styleUrl>
+            <LineString id="geom_540">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.58906755,34.23793511,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_551">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_529</styleUrl>
+            <LineString id="geom_542">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.588785,34.235153,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_553">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_531</styleUrl>
+            <LineString id="geom_544">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.44933271,34.19223631,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_557">
+            <name>11</name>
+            <description>11 frequently visited</description>
+            <styleUrl>#stylesel_534</styleUrl>
+            <LineString id="geom_548">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.448699638,34.2008499355,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_561">
+            <name>12</name>
+            <description>12 frequently visited</description>
+            <styleUrl>#stylesel_537</styleUrl>
+            <LineString id="geom_552">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.449126883,34.2219025967,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_565">
+            <name>17</name>
+            <description>17 frequently visited</description>
+            <styleUrl>#stylesel_540</styleUrl>
+            <LineString id="geom_556">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.459528451,34.1931269606,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_569">
+            <name>85</name>
+            <description>85 frequently visited</description>
+            <styleUrl>#stylesel_543</styleUrl>
+            <LineString id="geom_560">
+                <coordinates>-118.437215293,34.193823869,0.0 -118.583461719,34.2340854629,0.0</coordinates>
+            </LineString>
+        </Placemark>
+    </Document>
+</kml>

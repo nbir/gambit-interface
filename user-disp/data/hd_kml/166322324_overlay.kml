@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="feat_2141">
+        <Style id="stylesel_2072">
+            <IconStyle id="substyle_2072">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_1020">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_2074">
+            <IconStyle id="substyle_2074">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_1021">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_2076">
+            <IconStyle id="substyle_2076">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_1022">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_2078">
+            <IconStyle id="substyle_2078">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_1023">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_2080">
+            <PolyStyle id="substyle_2080">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>5</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="stylesel_2081">
+            <IconStyle id="substyle_2081">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_1024">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/blu-stars.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_2083">
+            <IconStyle id="substyle_2083">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_1025">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/red-stars.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Placemark id="feat_2143">
+            <name>1</name>
+            <styleUrl>#stylesel_2072</styleUrl>
+            <Point id="geom_2116">
+                <coordinates>-117.90387988,33.84187279,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_2145">
+            <name>1</name>
+            <styleUrl>#stylesel_2074</styleUrl>
+            <Point id="geom_2118">
+                <coordinates>-117.90387988,33.84187279,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_2147">
+            <name>1</name>
+            <styleUrl>#stylesel_2076</styleUrl>
+            <Point id="geom_2120">
+                <coordinates>-117.90422129,33.84289708,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_2149">
+            <name>1</name>
+            <styleUrl>#stylesel_2078</styleUrl>
+            <Point id="geom_2122">
+                <coordinates>-117.90379034,33.84186538,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_2151">
+            <name>13</name>
+            <styleUrl>#stylesel_2080</styleUrl>
+            <Polygon id="geom_2124">
+                <outerBoundaryIs>
+                    <LinearRing id="geom_2125">
+                        <coordinates>-117.97446727,33.86596279,0.0 -117.97446727,33.8664108,0.0 -117.97498176,33.8664108,0.0 -117.97498176,33.86596279,0.0 -117.97446727,33.86596279,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="feat_2153">
+            <name>13</name>
+            <styleUrl>#stylesel_2081</styleUrl>
+            <Point id="geom_2126">
+                <coordinates>-117.974720055,33.8660906408,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_2155">
+            <name>Home</name>
+            <styleUrl>#stylesel_2083</styleUrl>
+            <Point id="geom_2128">
+                <coordinates>-117.414681918,33.9378742199,0.0</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>

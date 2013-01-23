@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="feat_7736">
+        <Style id="stylesel_7564">
+            <LineStyle id="substyle_7564">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_7566">
+            <LineStyle id="substyle_7566">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_7569">
+            <LineStyle id="substyle_7569">
+                <color>ffff0000</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Placemark id="feat_7738">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_7564</styleUrl>
+            <LineString id="geom_7667">
+                <coordinates>-122.386270408,37.6149180015,0.0 -122.38448575,37.6092803,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_7740">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_7566</styleUrl>
+            <LineString id="geom_7669">
+                <coordinates>-122.386270408,37.6149180015,0.0 -122.38497825,37.60859575,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_7744">
+            <name>18</name>
+            <description>18 frequently visited</description>
+            <styleUrl>#stylesel_7569</styleUrl>
+            <LineString id="geom_7673">
+                <coordinates>-122.386270408,37.6149180015,0.0 -118.400913492,33.9470414972,0.0</coordinates>
+            </LineString>
+        </Placemark>
+    </Document>
+</kml>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="feat_13507">
+        <Style id="stylesel_13244">
+            <LineStyle id="substyle_13244">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_13246">
+            <LineStyle id="substyle_13246">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_13248">
+            <LineStyle id="substyle_13248">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_13250">
+            <LineStyle id="substyle_13250">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_13252">
+            <LineStyle id="substyle_13252">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_13254">
+            <LineStyle id="substyle_13254">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_13256">
+            <LineStyle id="substyle_13256">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_13259">
+            <LineStyle id="substyle_13259">
+                <color>ffff0000</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_13262">
+            <LineStyle id="substyle_13262">
+                <color>ffff0000</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_13265">
+            <LineStyle id="substyle_13265">
+                <color>ffff0000</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_13268">
+            <LineStyle id="substyle_13268">
+                <color>ffff0000</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Placemark id="feat_13509">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_13244</styleUrl>
+            <LineString id="geom_13412">
+                <coordinates>-118.330423474,33.8725022057,0.0 -117.4465454,33.99910449,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_13511">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_13246</styleUrl>
+            <LineString id="geom_13414">
+                <coordinates>-118.330423474,33.8725022057,0.0 -117.44609035,33.9984992,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_13513">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_13248</styleUrl>
+            <LineString id="geom_13416">
+                <coordinates>-118.330423474,33.8725022057,0.0 -117.44647574,33.99961891,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_13515">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_13250</styleUrl>
+            <LineString id="geom_13418">
+                <coordinates>-118.330423474,33.8725022057,0.0 -117.44815764,34.00088793,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_13517">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_13252</styleUrl>
+            <LineString id="geom_13420">
+                <coordinates>-118.330423474,33.8725022057,0.0 -117.44642001,33.99899397,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_13519">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_13254</styleUrl>
+            <LineString id="geom_13422">
+                <coordinates>-118.330423474,33.8725022057,0.0 -117.44720456,33.99941969,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_13521">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_13256</styleUrl>
+            <LineString id="geom_13424">
+                <coordinates>-118.330423474,33.8725022057,0.0 -117.44592266,33.9978849,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_13525">
+            <name>39</name>
+            <description>39 frequently visited</description>
+            <styleUrl>#stylesel_13259</styleUrl>
+            <LineString id="geom_13428">
+                <coordinates>-118.330423474,33.8725022057,0.0 -118.317604748,33.8737257479,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_13529">
+            <name>33</name>
+            <description>33 frequently visited</description>
+            <styleUrl>#stylesel_13262</styleUrl>
+            <LineString id="geom_13432">
+                <coordinates>-118.330423474,33.8725022057,0.0 -118.126019145,34.0692805994,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_13533">
+            <name>29</name>
+            <description>29 frequently visited</description>
+            <styleUrl>#stylesel_13265</styleUrl>
+            <LineString id="geom_13436">
+                <coordinates>-118.330423474,33.8725022057,0.0 -118.33523995,33.8765596824,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_13537">
+            <name>70</name>
+            <description>70 frequently visited</description>
+            <styleUrl>#stylesel_13268</styleUrl>
+            <LineString id="geom_13440">
+                <coordinates>-118.330423474,33.8725022057,0.0 -118.336866865,33.8643435691,0.0</coordinates>
+            </LineString>
+        </Placemark>
+    </Document>
+</kml>

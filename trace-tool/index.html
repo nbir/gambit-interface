@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<!--
+GAMBIT Interface
+
+Copyright (C) USC Information Sciences Institute
+Author: Nibir Bora <nbora@usc.edu>
+URL: <http://cbg.isi.edu/>
+For license information, see LICENSE
+-->
+
+<html lang="en">
+	<head>
+		<title>GAMBIT Vis | Trace Tool</title>
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="GAMBIT (Geospatial Analysis of Motion-Based Intelligence and Tracking)" />
+		<meta name="author" content="Nibir Bora" />
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />	-->
+
+		<!-- GOOGLE MAPS RESOURCES -->
+		<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=drawing,visualization"></script>
+
+		<!-- JQUERY RESOURCES -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/smoothness/jquery-ui.css" />
+
+		<!-- BOOTSTRAP RESOURCES -->
+		<link href="../~packages/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<script src="../~packages/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- GAMBIT RESOURCES -->
+		<script src="../js/toolbar.js"></script>
+		<script src="js/trace-viewer.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="../css/style-document.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style-tweet-callout.css" />
+		
+		<!-- LIGHBOX -->
+		<script src="../~packages/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+		<link rel="stylesheet" type="text/css" href="../~packages/fancybox/source/jquery.fancybox.css?v=2.1.3" />
+		<script src="../~packages/fancybox/source/jquery.fancybox.pack.js?v=2.1.3"></script>
+	
+	
+	</head>
+
+	<body>
+		<div class="navbar navbar-fixed-top">
+			<div style="padding:0 8px 0 8px;" class="navbar-inner">
+				<a id="a-home" href="#" class="brand">
+					<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Terrestrial_globe.svg/300px-Terrestrial_globe.svg.png" style="margin:-5px 0 0 0;padding:0;height:25px"/>
+					Gambit Interface</a>
+					
+					<ul class="nav">
+				    	<li><a id="a-query" href="#">Query Tool</a></li>
+				    	<li><a id="a-disp" href="#">User Displacement</a></li>
+				    	<li class="active"><a id="a-trace" href="#">Trace Tool</a></li>
+				    	<li><a id="a-outlier" href="#">Outlier Tool</a></li>
+				    	<li><a id="a-gang-move" href="#">Gang Move</a></li>
+				    </ul>
+								
+					<span class="btn-group pull-right">			
+						<button id="action-panel-button" class="btn" data-toggle="button">Action Panel</button>
+						<a href="../help/index.html" class="btn various fancybox.ajax">Help</a>
+					</span>
+					
+			</div>
+		</div>
+
+		<div id="action-panel" class="span4">
+			<div class="row" style="height:50px;"></div>
+			
+			<div class="row">
+				<div class="span4">
+					<h5>Load traces:</h5>
+					<p class="inst">Click <span class="text-info">Load Traces</span> to load traces filtered with selected options. The <span class="text-info">Clear List</span> option clears the traces from the list below, but does not delete them from the map.</p>
+				</div>
+				
+				<div class="span4">
+					
+					<span class="form-inline">
+						<div class="input-prepend">
+	      					<span class="add-on"><i class="icon-calendar"></i></span>
+	      					<input type="text" name="from-date" id="from-date" class="input-small" placeholder="From" />	
+	    				</div>
+						
+						<div class="input-prepend">
+	      					<span class="add-on"><i class="icon-calendar"></i></span>
+	      					<input type="text" name="to-date" id="to-date" class="input-small" placeholder="To"/>	
+	    				</div>
+    				</span>
+    				<br/>
+    				<br/>
+					
+					<select id="location-list" class="span3">
+						<option selected="selected" value="6">Los Angeles</option>
+						<option value="11">New York</option>
+						<option value="8">London</option>
+					</select>
+					
+					<select id="min-points" class="span3">
+						<option value="5">Minimum 5 points</option>
+						<option selected="selected" value="8">Minimum 8 points</option>
+						<option value="10">Minimum 10 points</option>
+						<option value="15">Minimum 15 points</option>
+					</select>
+					
+					<select id="trace-order" class="span3">
+						<option selected="selected" value="random">Random order</option>
+						<option value="tweets">Order by tweets</option>
+						<option value="length">Order by length</option>
+					</select>
+					
+					<label for="no-of-traces"><p class="inst">No. of traces:</p></label>
+					<input id="no-of-traces" type="text" class="span3" placeholder="No. of traces" value="10">
+					
+					<div class="btn-group">
+						<button id="load-button" class="btn"><i class="icon-download-alt"></i> Load Traces</button>
+						<button id="clear-content-button" class="btn">Clear List</button>
+					</div>
+					<hr />
+				</div>
+			</div>
+			<div class="row">
+				<div class="span4">
+					<h5>Show traces:</h5>
+					<p class="inst">Select a trace ID and click on <span class="text-info">Show</span> to show on map. <span class="text-info">Show All</span> shows all traces on the list. The <i class="icon-trash"></i> button clears all traces on map and clears the list as well.</p>
+					<select id="trace-list" class="span3"></select>
+					<span class="btn-group">
+						<button id="show-button" class="btn btn-success"><i class="icon-play"></i> Show</button>
+						<button id="show-all-button" class="btn">Show All</button>
+						<button id="clear-map-button" class="btn"><i class="icon-trash"></i></button>
+					</span>
+				</div>
+			</div>
+			<hr />
+		</div>
+		
+		<div id="map-canvas"></div>
+
+	</body>
+</html>

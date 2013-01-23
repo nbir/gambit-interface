@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="feat_11319">
+        <Style id="stylesel_11053">
+            <LineStyle id="substyle_11053">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_11055">
+            <LineStyle id="substyle_11055">
+                <color>ff008000</color>
+                <colorMode>normal</colorMode>
+                <width>0.75</width>
+            </LineStyle>
+        </Style>
+        <Style id="stylesel_11058">
+            <LineStyle id="substyle_11058">
+                <color>ffff0000</color>
+                <colorMode>normal</colorMode>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        <Placemark id="feat_11321">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_11053</styleUrl>
+            <LineString id="geom_11240">
+                <coordinates>-118.073359099,34.0849898409,0.0 -118.12133264,33.86027077,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_11323">
+            <name>1</name>
+            <description>visited once</description>
+            <styleUrl>#stylesel_11055</styleUrl>
+            <LineString id="geom_11242">
+                <coordinates>-118.073359099,34.0849898409,0.0 -118.12133325,33.86027137,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="feat_11327">
+            <name>34</name>
+            <description>34 frequently visited</description>
+            <styleUrl>#stylesel_11058</styleUrl>
+            <LineString id="geom_11246">
+                <coordinates>-118.073359099,34.0849898409,0.0 -118.254865403,33.9764845371,0.0</coordinates>
+            </LineString>
+        </Placemark>
+    </Document>
+</kml>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<!--
+GAMBIT Interface
+
+Copyright (C) USC Information Sciences Institute
+Author: Nibir Bora <nbora@usc.edu>
+URL: <http://cbg.isi.edu/>
+For license information, see LICENSE
+-->
+
+<html lang="en">
+	<head>
+		<title>GAMBIT Vis | Outlier Tool2</title>
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="GAMBIT (Geospatial Analysis of Motion-Based Intelligence and Tracking)" />
+		<meta name="author" content="Nibir Bora" />
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />	-->
+
+		<!-- GOOGLE MAPS RESOURCES -->
+		<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=drawing,visualization"></script>
+
+		<!-- JQUERY RESOURCES -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+		<script src="../~packages/multidatespicker/jquery-ui.multidatespicker.js"></script>
+		
+		<link href="../~packages/multidatespicker/css/mdp.css" rel="stylesheet">
+		<!--<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/smoothness/jquery-ui.css" />-->
+
+		<!-- BOOTSTRAP RESOURCES -->
+		<link href="../~packages/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<script src="../~packages/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- GAMBIT RESOURCES -->
+		<script src="../js/toolbar.js"></script>
+		<script src="js/outlier-tool.js"></script>
+		<script src="//brain.isi.edu:4000/static/js/jquery.json.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="../css/style-document.css" />
+		<link rel="stylesheet" type="text/css" href="css/outlier-tool.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style-tweet-callout.css" />
+		
+		<!-- LIGHBOX -->
+		<script src="../~packages/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+		<link rel="stylesheet" type="text/css" href="../~packages/fancybox/source/jquery.fancybox.css?v=2.1.3" />
+		<script src="../~packages/fancybox/source/jquery.fancybox.pack.js?v=2.1.3"></script>
+	
+		<!-- DATERANGEPICKER 
+		<script src="../daterangepicker/date.js"></script>
+		<script src="../daterangepicker/daterangepicker.js"></script>
+		<link rel="stylesheet" type="text/css" href="../daterangepicker/daterangepicker.css" />
+		-->
+		
+		<!-- HIGHCHART -->
+		<script type="text/javascript" src="../~packages/highcharts/js/highcharts.js"></script>
+		<script type="text/javascript" src="../~packages/highcharts/js/modules/exporting.js"></script>
+		
+	</head>
+
+	<body>
+		<div class="navbar navbar-fixed-top">
+			<div style="padding:0 8px 0 8px;" class="navbar-inner">
+				<a id="a-home" href="#" class="brand">
+					<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Terrestrial_globe.svg/300px-Terrestrial_globe.svg.png" style="margin:-5px 0 0 0;padding:0;height:25px"/>
+					Gambit Interface</a>
+					
+					<ul class="nav">
+				    	<li><a id="a-query" href="#">Query Tool</a></li>
+				    	<li><a id="a-disp" href="#">User Displacement</a></li>
+				    	<li><a id="a-trace" href="#">Trace Tool</a></li>
+				    	<li class="active"><a id="a-outlier" href="#">Outlier Tool</a></li>
+				    	<li><a id="a-gang-move" href="#">Gang Move</a></li>
+				    </ul>
+								
+					<span class="btn-group pull-right">			
+						<button id="action-panel-button" class="btn" data-toggle="button">Action Panel</button>
+						<a href="../help/index.html" class="btn various fancybox.ajax">Help</a>
+					</span>
+					
+			</div>
+		</div>
+		
+		<div id="action-panel" class="span4">
+			<div class="row" style="height:50px;"></div>
+			
+			<div class="row">
+				
+				
+				<div class="span4 form-inline">
+					<select id="location-list" class="span2">
+						<option selected="selected" value="6">Los Angeles</option>
+						<option value="21">LA (finer grid)</option>
+					</select>
+					<button id="load-button" class="btn"><i class="icon-share"></i> Grid bounds</button>
+					<br />
+					<br />
+				</div>
+				
+				<div class="span4 form-inline">
+					<span class="btn-group">
+						<button id="base-button" class="btn"><i class="icon-tag"></i> <span class="text-info">Base</span></button>
+						<button id="view-button" class="btn"><i class="icon-tags"></i> <span class="text-error">View</span></button>
+					</span>
+					<button id="clear-button" class="btn"><i class="icon-trash"></i> Clear</button>
+				</div>
+				
+				<div class="span4" style="text-align:center;">
+					<br/>
+					<div class="span3" id="multi-date" style="font-size:11px;"></div>
+				</div>
+				
+				<div class="span4 form-inline">
+					<br/>
+					<select id="normalize" class="span2">
+						<option value="0">No Norm.</option>
+						<option selected="selected" value="1">Max Norm.</option>
+						<option value="2">Area Norm.</option>
+					</select>
+					<button id="plot-button" class="btn btn-info"><i class="icon-play"></i> Plot</button>
+				</div>
+				
+				<div class="span4">
+					<br/>
+					<button id="graph-panel-button" class="btn" data-toggle="button"><i class="icon-picture"></i> Show/hide Plot</button>
+				</div>
+				
+			</div>
+		</div>
+		
+		<div id="map-canvas"></div>
+		
+		<div id="graph-panel">
+			<div id="graph-canvas" class="offset4">
+			</div>
+		</div>
+
+	</body>
+</html>

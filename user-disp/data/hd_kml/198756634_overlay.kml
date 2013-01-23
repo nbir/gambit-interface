@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="feat_12633">
+        <Style id="stylesel_12394">
+            <PolyStyle id="substyle_12394">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>5</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="stylesel_12395">
+            <IconStyle id="substyle_12395">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_6144">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/blu-stars.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_12397">
+            <PolyStyle id="substyle_12397">
+                <color>ff0000ff</color>
+                <colorMode>normal</colorMode>
+                <fill>1</fill>
+                <outline>5</outline>
+            </PolyStyle>
+        </Style>
+        <Style id="stylesel_12398">
+            <IconStyle id="substyle_12398">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_6145">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/blu-stars.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="stylesel_12400">
+            <IconStyle id="substyle_12400">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="link_6146">
+                    <href>http://maps.google.com/mapfiles/kml/paddle/red-stars.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Placemark id="feat_12635">
+            <name>19</name>
+            <styleUrl>#stylesel_12394</styleUrl>
+            <Polygon id="geom_12544">
+                <outerBoundaryIs>
+                    <LinearRing id="geom_12545">
+                        <coordinates>-117.283049,34.159598,0.0 -117.283049,34.159598,0.0 -117.283049,34.159598,0.0 -117.283049,34.159598,0.0 -117.283049,34.159598,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="feat_12637">
+            <name>19</name>
+            <styleUrl>#stylesel_12395</styleUrl>
+            <Point id="geom_12546">
+                <coordinates>-117.283049,34.159598,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_12639">
+            <name>18</name>
+            <styleUrl>#stylesel_12397</styleUrl>
+            <Polygon id="geom_12548">
+                <outerBoundaryIs>
+                    <LinearRing id="geom_12549">
+                        <coordinates>-117.627129,34.098375,0.0 -117.627129,34.098375,0.0 -117.627129,34.098375,0.0 -117.627129,34.098375,0.0 -117.627129,34.098375,0.0</coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+        <Placemark id="feat_12641">
+            <name>18</name>
+            <styleUrl>#stylesel_12398</styleUrl>
+            <Point id="geom_12550">
+                <coordinates>-117.627129,34.098375,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="feat_12643">
+            <name>Home</name>
+            <styleUrl>#stylesel_12400</styleUrl>
+            <Point id="geom_12552">
+                <coordinates>-117.232286855,33.955035253,0.0</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>
