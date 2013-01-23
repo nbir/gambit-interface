@@ -49,7 +49,8 @@ $(function() {
 
 	
 	//Load FT and HD json lists
-	var API_URL = "../data/user-disp/";
+	//var API_URL = "../data/user-disp/";
+	var API_URL = "data/";
 	$.getJSON(API_URL + 'ft_users_rank.json', function(data) {
 		ft_users = data;
 	});
@@ -65,6 +66,7 @@ $(function() {
 			var rank = $('#ft-user-rank').val();
 			kml_url = KML_URL + 'ft_kml/' + ft_users[rank] + '_disp.kml';
 			ft_disp = new google.maps.KmlLayer(kml_url);
+			console.log(ft_disp);
 			ft_disp.setMap(map);
 			$('#ft-disp-lines-button').button('toggle');
 		}
