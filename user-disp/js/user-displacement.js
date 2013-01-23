@@ -44,13 +44,14 @@ $(function() {
 	var ft_overlay = null;
 	var hd_disp = null;
 	var hd_overlay = null;
-	//var KML_URL = 'http://brain.isi.edu/~gambit/v2.0/data/user-disp/';
-	var KML_URL = 'data/';
+	//var KML_URL = 'data/';	// TODO Doesn't work for some reason. only works with absolute URL.
+	var KML_URL = 'http://brain.isi.edu/~gambit/v2.0/user-disp/data/';
+
 
 	
 	//Load FT and HD json lists
-	//var API_URL = "../data/user-disp/";
 	var API_URL = "data/";
+
 	$.getJSON(API_URL + 'ft_users_rank.json', function(data) {
 		ft_users = data;
 	});
@@ -66,7 +67,6 @@ $(function() {
 			var rank = $('#ft-user-rank').val();
 			kml_url = KML_URL + 'ft_kml/' + ft_users[rank] + '_disp.kml';
 			ft_disp = new google.maps.KmlLayer(kml_url);
-			console.log(ft_disp);
 			ft_disp.setMap(map);
 			$('#ft-disp-lines-button').button('toggle');
 		}
