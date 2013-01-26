@@ -1,97 +1,78 @@
 $(function() {
-	var mapOptions = {
-		center : new google.maps.LatLng(34.0522, -118.2428),
+	var map = initMap('map-canvas', {
+		center : [34.0522, -118.2428],
 		zoom : 11,
-		mapTypeId : google.maps.MapTypeId.ROADMAP,
+		map_type : 'ROADMAP'
+	});
 
-		mapTypeControl : true,
-		mapTypeControlOptions : {
-			style : google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-			position : google.maps.ControlPosition.RIGHT_BOTTOM
+	//--- API URLs
+	var API_V2_GRID_CELLDATA = 'http://brain.isi.edu:4002/api/v2/grid/celldata/';
+	var API_V2_LOCATION_LIST = "http://brain.isi.edu:4002/api/v2/location/list";
+	//-----
+
+
+	//--- Populate locations
+	var location_bounds = {};
+
+	$("#show-button").attr('disabled', true);
+	$.ajax({
+		url: API_V2_LOCATION_LIST,
+		type: 'GET',
+		dataType: 'json',
+		error: function(data) {
+			console.log('Error! APIv2 location::list');
+			console.log(data)
+
+			$("#show-button").attr('disabled', false);
 		},
-		panControl : true,
-		panControlOptions : {
-			position : google.maps.ControlPosition.RIGHT_CENTER
-		},
-		zoomControl : true,
-		zoomControlOptions : {
-			style : google.maps.ZoomControlStyle.LARGE,
-			position : google.maps.ControlPosition.RIGHT_CENTER
-		},
-		scaleControl : true,
-		scaleControlOptions : {
-			position : google.maps.ControlPosition.RIGHT_BOTTOM
-		},
-		streetViewControl : true,
-		streetViewControlOptions : {
-			position : google.maps.ControlPosition.RIGHT_CENTER
+		success: function(data) {
+			$.each(data, function(i, location) {
+				if (location.name == "LACounty") {
+					$("#location-list").append('<option selected="selected" value="' + location.id + '">' + location.name + '</option>');
+				} else {
+					$("#location-list").append('<option value="' + location.id + '">' + location.name + '</option>');
+				}
+
+				location_bounds[location.id] = new google.maps.LatLngBounds();
+				$.each(location.polygon, function(i, latlng) {
+					location_bounds[location.id].extend(new google.maps.LatLng(latlng[0], latlng[1]));
+				});
+			});
+
+			$("#show-button").attr('disabled', false);
 		}
-	};
-	var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+	});
+	//--- Location change
+	google.maps.event.addDomListener(document.getElementById("location-list"), 'change', function() {
+		clearData(true, true);
+		map.fitBounds(location_bounds[Number($('#location-list option:selected').val())]);
+	});
+	//-----
 
-	/* URLs for the three APIs */
-	API_TEMPLATE_URL = 'http://brain.isi.edu:4000/api/v1/grid/template/';
-	API_GRID_URL = 'http://brain.isi.edu:4000/api/v1/grid/data/';
 
-	/* Global variables */
-	var drawing_manager;
-	var base_selection = {};
-	var view_selection = {};
+	//--- BASE/VIEW select
 	var base_overlay = {};
 	var view_overlay = {};
-	
+
 	var base_dates = [];
 	var view_dates = [];
 	
-	var base_data;
-	var view_data;
-	
 	var base_or_view = null;
-	
-	
-	var base_cell_status = {};
-	// To store status of each grid; selected/not-selected : 1/0
-	var view_cell_status = {};
-	var multi_select_set = false;
-	
-	var chart_data = [{
-		name: 'Base',
-		data: []
-	}, {
-		name: 'View',
-		data: []
-	}];
-	//
 
-	/* OnLoad process */
-	initializeDrawingManager();
+	// Date Picker
 	$('#multi-date').multiDatesPicker({
-		dateFormat : "yy-m-dd"
-	});
-	
-	$('#graph-panel').toggle();
-	google.maps.event.addDomListener(document.getElementById('graph-panel-button'), 'click', function() {
-		$('#graph-panel').toggle();
-	});
-	$('#graph-panel-button').trigger('click');
-	renderChart();
-	
-	//-----
-
-	/* Event listners */
-	google.maps.event.addDomListener(document.getElementById('load-button'), 'click', loadButtonClick);
-	google.maps.event.addDomListener(document.getElementById('base-button'), 'click', baseButtonClick);
-	google.maps.event.addDomListener(document.getElementById('view-button'), 'click', viewButtonClick);
-	google.maps.event.addDomListener(document.getElementById('clear-button'), 'click', clearButtonClick);
-	google.maps.event.addListener(drawing_manager, 'rectanglecomplete', function(rectangle) {
-		overlayDrawn(rectangle);
-	});
-	google.maps.event.addDomListener(document.getElementById('plot-button'), 'click', function() {
-		updateData();
-		
+		dateFormat : "yy.m.dd"
 	});
 
-	/* Grid styling */
+	// Drawing manager
+	var drawing_manager = new google.maps.drawing.DrawingManager({
+		drawingMode : null, // No initial drawing mode
+		drawingControl : false, // Do not display drawing controls
+		drawingControlOptions : {
+			drawingModes : [google.maps.drawing.OverlayType.RECTANGLE]
+		},
+	});
+	drawing_manager.setMap(map);
 	var base_selected = {
 		strokeColor : "blue",
 		strokeOpacity : 0.7,
@@ -107,61 +88,40 @@ $(function() {
 		fillOpacity : 0.25,
 	};
 
-	/* Function listing */
-	function initializeDrawingManager() {
-	/* This function initalizes the drawing manager. The Drawing
-	* panel is however not shown on map.
-	*/
-	// Drawing Manager
-	drawing_manager = new google.maps.drawing.DrawingManager({
-		drawingMode : null, // No initial drawing mode
-		drawingControl : false, // Do not display drawing controls
-		drawingControlOptions : {
-			drawingModes : [google.maps.drawing.OverlayType.RECTANGLE]
-		},
+	// Switch between BASE and VIEW
+	google.maps.event.addDomListener(document.getElementById('base-button'), 'click', function() {
+		if (base_or_view == null) {
+			drawing_manager.setDrawingMode(google.maps.drawing.OverlayType.RECTANGLE);
+			if(base_dates.length !=0 ) {
+				$('#multi-date').multiDatesPicker({
+					addDates: base_dates
+				});
+			}
+			
+			base_or_view = 'base';
+			$('#base-button').button('toggle');
+		} else if (base_or_view == 'base') {
+			drawing_manager.setDrawingMode(null);
+			base_dates = $('#multi-date').multiDatesPicker('getDates');
+			$('#multi-date').multiDatesPicker('resetDates');
+			
+			base_or_view = null;
+			$('#base-button').button('toggle');
+		} else if (base_or_view == 'view') {
+			$('#view-button').button('toggle');
+			view_dates = $('#multi-date').multiDatesPicker('getDates');
+			$('#multi-date').multiDatesPicker('resetDates');
+			if(base_dates.length !=0 ) {
+				$('#multi-date').multiDatesPicker({
+					addDates: base_dates
+				});
+			}
+			
+			base_or_view = 'base';
+			$('#base-button').button('toggle');
+		}
 	});
-	drawing_manager.setMap(map);
-}
-	
-	function loadButtonClick() {
-		$('#load-button').button('loading');
-		//loadGridForLocation($('#location-list option:selected').val());
-	}
-
-	function baseButtonClick() {
-		if (base_or_view == null) {
-			drawing_manager.setDrawingMode(google.maps.drawing.OverlayType.RECTANGLE);
-			if(base_dates.length !=0 ) {
-				$('#multi-date').multiDatesPicker({
-					addDates: base_dates
-				});
-			}
-			
-			base_or_view = 'base';
-			$('#base-button').button('toggle');
-		} else if (base_or_view == 'base') {
-			drawing_manager.setDrawingMode(null);
-			base_dates = $('#multi-date').multiDatesPicker('getDates');
-			$('#multi-date').multiDatesPicker('resetDates');
-			
-			base_or_view = null;
-			$('#base-button').button('toggle');
-		} else if (base_or_view == 'view') {
-			$('#view-button').button('toggle');
-			view_dates = $('#multi-date').multiDatesPicker('getDates');
-			$('#multi-date').multiDatesPicker('resetDates');
-			if(base_dates.length !=0 ) {
-				$('#multi-date').multiDatesPicker({
-					addDates: base_dates
-				});
-			}
-			
-			base_or_view = 'base';
-			$('#base-button').button('toggle');
-		}
-	}
-
-	function viewButtonClick() {
+	google.maps.event.addDomListener(document.getElementById('view-button'), 'click', function() {
 		if (base_or_view == null) {
 			drawing_manager.setDrawingMode(google.maps.drawing.OverlayType.RECTANGLE);
 			if(view_dates.length !=0 ) {
@@ -192,14 +152,13 @@ $(function() {
 			base_or_view = 'view';
 			$('#view-button').button('toggle');
 		}
-	}
-	
-	function overlayDrawn(rectangle) {
+	});
+
+	// Area selection
+	google.maps.event.addListener(drawing_manager, 'rectanglecomplete', function(rectangle) {
 		if(base_or_view == 'base') {
-			var new_bounds = [rectangle.getBounds().getSouthWest().lat(), rectangle.getBounds().getSouthWest().lng(), rectangle.getBounds().getNorthEast().lat(), rectangle.getBounds().getNorthEast().lng()];
 			var last_prop = 0;
-			for(last_prop in base_selection);
-			base_selection[Number(last_prop) + 1] = new_bounds;
+			for(last_prop in base_overlay);
 			rectangle.setOptions(base_selected);
 			base_overlay[Number(last_prop) + 1] = rectangle;
 			google.maps.event.addDomListener(base_overlay[Number(last_prop) + 1], 'click', function() {
@@ -207,10 +166,8 @@ $(function() {
 			});
 		}
 		else if(base_or_view == 'view') {
-			var new_bounds = [rectangle.getBounds().getSouthWest().lat(), rectangle.getBounds().getSouthWest().lng(), rectangle.getBounds().getNorthEast().lat(), rectangle.getBounds().getNorthEast().lng()];
 			var last_prop = 0;
-			for(last_prop in view_selection);
-			view_selection[Number(last_prop) + 1] = new_bounds;
+			for(last_prop in view_overlay);
 			rectangle.setOptions(view_selected);
 			view_overlay[Number(last_prop) + 1] = rectangle;
 			google.maps.event.addDomListener(view_overlay[Number(last_prop) + 1], 'click', function() {
@@ -221,24 +178,27 @@ $(function() {
 			rectangle.setMap(null);
 		}
 		//drawing_manager.setDrawingMode(null);
-	}
-	
+	});
 	function deleteBaseOverlay(id) {
-		delete base_selection[id];
-		base_overlay[id].setMap(null)
+		base_overlay[id].setMap(null);
+		delete base_overlay[id];
 	}
 	
 	function deleteViewOverlay(id) {
-		delete view_selection[id];
-		view_overlay[id].setMap(null)
+		view_overlay[id].setMap(null);
+		delete view_overlay[id];
 	}
-	
-	function clearButtonClick() {
+	// Clear
+	google.maps.event.addDomListener(document.getElementById('clear-button'), 'click', function() {
 		$.each(base_overlay, function(i, rectangle) {
-			rectangle.setMap(null);
+			if(rectangle) {
+				rectangle.setMap(null);
+			}
 		})
 		$.each(view_overlay, function(i, rectangle) {
-			rectangle.setMap(null);
+			if(rectangle) {
+				rectangle.setMap(null);
+			}
 		})
 		
 		$('#multi-date').multiDatesPicker('resetDates');
@@ -251,8 +211,6 @@ $(function() {
 		}
 		
 		base_or_view = null;
-		base_selection = [];
-		view_selection = [];
 		base_overlay = [];
 		view_overlay = [];
 		base_dates = [];
@@ -260,214 +218,133 @@ $(function() {
 		
 		base_data = null;
 		view_data = null;
-	}
-	
-	function updateData() {
-		var base_query = makeBaseQuery();
-		var view_query = makeViewQuery();
-		
-		console.log(base_query);
-		console.log(view_query);
-	}
-	
-	function makeBaseQuery() {
-		query_string = '?';
-		query_string += 'location_id=' + $('#location-list option:selected').val();
-		var arr_selection = [];
-		$.each(base_selection, function(i, value) {
-			arr_selection.push(value);
-		});
-		query_string += '&selection=' + $.toJSON(arr_selection);
-		if(base_or_view == 'base') {
-			base_dates = $('#multi-date').multiDatesPicker('getDates');
-		}
-		query_string += '&dates=' + $.toJSON(base_dates);
-		
-		return query_string;
-	}
-	
-	function makeViewQuery() {
-		query_string = '?';
-		query_string += 'location_id=' + $('#location-list option:selected').val();
-		var arr_selection = [];
-		$.each(view_selection, function(i, value) {
-			arr_selection.push(value);
-		});
-		query_string += '&selection=' + $.toJSON(arr_selection);
-		if(base_or_view == 'view') {
-			view_dates = $('#multi-date').multiDatesPicker('getDates');
-		}
-		query_string += '&dates=' + $.toJSON(view_dates);
-		
-		return query_string;
-	}
-	
-	
-	
 
-	function plotButtonClick() {
-		$('#calc-button').button('loading');
-		$('#calc-button').button('...');
-        getBaseData();
-		//getViewData();	//TODO better way of ajax execution 
-		
-		/*
-		setTimeout(function() {
-			console.log($.toJSON(chart_data));
-			renderChart(chart_data);
-			$('#calc-button').button('reset');
-		}, 2000);
-		*/
-	}
-	
-	/*
-	function plotButtonClick() {
-		//console.log($.toJSON(chart_data));
+		chart_data[0].data = [];
+		chart_data[1].data = [];
 		renderChart(chart_data);
-	}
-	*/
-	
-	function getBaseData() {
-		var query_string = "";
-		query_string = query_string + '?' + getDateQuery('base');
-		query_string = query_string + '&ids=' + getCellQuery(base_cell_status);
-		
-		console.log(API_GRID_URL + query_string);
-		$.getJSON(API_GRID_URL + query_string, function(data) {
-			var vector = averageAllCells(data);
-			vector = splitAndAvgByDay(vector);
-			if($('#normalize option:selected').val() == '0') {
-				//console.log('no norm');
-			}
-			else if($('#normalize option:selected').val() == '1') {
-				vector = maxNormalize(vector);
-				//console.log('max norm');
-			}
-			else if($('#normalize option:selected').val() == '2') {
-				vector = areaNormalize(vector);
-				//console.log('area norm');
-			}
-			
-			chart_data[0].data = loseKeys(vector);
-			
-			// TODO Better way for ajax execution
-			getViewData();
-		});
-	}
-	
-	function getViewData() {
-		var query_string = "";
-		query_string = query_string + '?' + getDateQuery('view');
-		query_string = query_string + '&ids=' + getCellQuery(view_cell_status);
-		
-		console.log(API_GRID_URL + query_string);
-		$.getJSON(API_GRID_URL + query_string, function(data) {
-			var vector = averageAllCells(data);
-			vector = splitAndAvgByDay(vector);
-			if($('#normalize option:selected').val() == '0') {
-				//console.log('no norm');
-			}
-			else if($('#normalize option:selected').val() == '1') {
-				vector = maxNormalize(vector);
-				//console.log('max norm');
-			}
-			else if($('#normalize option:selected').val() == '2') {
-				vector = areaNormalize(vector);
-				//console.log('area norm');
-			}
-			
-			chart_data[1].data = loseKeys(vector);
-			
-			// TODO Better way for ajax execution
-			//console.log($.toJSON(chart_data));
-			renderChart();
-			$('#calc-button').button('reset');
-			//
-		});
-	}
-	
-	function renderChart() {
-		chart = new Highcharts.Chart({
-            chart: {renderTo: "graph-canvas", type: 'area'},
-            title: {text: ''},
-            xAxis: {title: {text: '24 hours of a day'}, categories: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]},
-            yAxis: {title: {text: 'Tweet count'}},
-            legend: {layout: 'vertical',align: 'right',verticalAlign: 'middle',},
-            series: chart_data
-		});
-	}
+	});
+	//-----
 
-	function getDateQuery(which) {
-		var date_query = "";
+
+	//--- Plot panel
+	$("#plot-panel").toggle();
+	google.maps.event.addDomListener(document.getElementById("show-plot-button"), 'click', function() {
+		$("#plot-panel").toggle();
+	});
+	//-----
+
+
+	//--- Query API and store data
+	var base_data;
+	var view_data;
+
+	function buildQuery(which) {
+		var query_string = {};
+		query_string['location_id'] = Number($('#location-list option:selected').val());
+		query_string['bbox'] = '';
 		if(which == 'base') {
-			var from_date = new Date($("#base-from-date").val());	
+			$.each(base_overlay, function(i, rectangle) {
+				if(rectangle) {
+					query_string['bbox'] += rectangle.getBounds().getSouthWest().toUrlValue() + ',' + rectangle.getBounds().getNorthEast().toUrlValue() + ',';
+				}
+			});
 		}
-		else {
-			var from_date = new Date($("#view-from-date").val());
+		else if(which == 'view') {
+			$.each(view_overlay, function(i, rectangle) {
+				if(rectangle) {
+					query_string['bbox'] += rectangle.getBounds().getSouthWest().toUrlValue() + ',' + rectangle.getBounds().getNorthEast().toUrlValue() + ',';
+				}
+			});
 		}
-		var to_date = new Date(from_date);
-		to_date.setDate(to_date.getDate() + Number($('#base-date-range').val()));
-		date_query += "ts_start=" + from_date.getFullYear() + "-" + (from_date.getMonth() + 1) + "-" + from_date.getDate() + "T00:00:00";
-		date_query += "&ts_end=" + to_date.getFullYear() + "-" + (to_date.getMonth() + 1) + "-" + to_date.getDate() + "T23:59:59";
-		return date_query;
+		query_string['bbox'] = query_string['bbox'].substring(0, query_string['bbox'].length - 1);
+
+		if(which == 'base') {
+			if(base_or_view == 'base') {
+				base_dates = $('#multi-date').multiDatesPicker('getDates');
+			}
+			query_string['days'] = $.toJSON(base_dates);
+		}
+		else if(which == 'view') {
+			if(base_or_view == 'view') {
+				view_dates = $('#multi-date').multiDatesPicker('getDates');
+			}
+			query_string['days'] = $.toJSON(view_dates);
+		}
+		query_string['td'] = 30;
+
+		return query_string;
 	}
 
-	function getCellQuery(arr) {
-		var out = [];
-		$.each(arr, function(id, val) {
-			if (val == 1) {
-				out.push(Number(id));
+	google.maps.event.addDomListener(document.getElementById('load-button'), 'click', function() {
+		$("#load-button").attr('disabled', true);
+		//base call
+		console.log(buildQuery('base'));
+		$.ajax({
+			url: API_V2_GRID_CELLDATA,
+			data: buildQuery('base'),
+			type: 'GET',
+			dataType: 'json',
+			error: function(data) {
+				console.log('Error! APIv2 grid::celldata');
+				console.log(data);
+
+				$("#load-button").attr('disabled', false);
+			},
+			success: function(data) {
+				base_data = data;
+				console.log(base_data.length);
+				$("#load-button").attr('disabled', false);
 			}
 		});
-		return $.toJSON(out);
-	}
+		//View call
+		console.log(buildQuery('view'));
+		$.ajax({
+			url: API_V2_GRID_CELLDATA,
+			data: buildQuery('view'),
+			type: 'GET',
+			dataType: 'json',
+			error: function(data) {
+				console.log('Error! APIv2 grid::celldata');
+				console.log(data);
 
-	// MATH tools
-	function averageAllCells(data) {
-		if(data.length != 1) {
-			for(var i=0; i<data[0].data.length; i++) {
-				for(var j=1; j<data.length; j++) {
-					data[0].data[i] += data[j].data[i];
-				}
+				$("#load-button").attr('disabled', false);
+			},
+			success: function(data) {
+				view_data = data;
+				console.log(view_data.length);
+				$("#load-button").attr('disabled', false);
 			}
-		}
-		var count = data.length;
-		for(var i=0; i<data[0].data.length; i++) {
-			data[0].data[i] /= count;
-			data[0].data[i] = Number(data[0].data[i].toFixed(3));
-		}
-		return data[0].data;
-	}
+		});	
 
+	});
+	//-----
 
+	//--- CHART data process/plot
+	var chart_data = [{
+		name: 'Base',
+		data: []
+	}, {
+		name: 'View',
+		data: []
+	}];
+	renderChart(chart_data);
 
+	// Math operations
+	function combineVectors(matrix) {
+		var out_vector = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+		var count = 0;
 
-
-
-
-	function splitAndAvgByDay(vector) {
-		/* Takes a vector of size n, n is a multiple of 24, and converts
-		 * to a single vector of length 24 with values averages for each
-		 * 24 length vector in 'vector'.
-		 */
-		if (vector.length == 24) {
-			return vector;
-		} else {
-			var out_vector = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-			var i;
-
-			for ( i = 0; i < vector.length; i++) {
-				out_vector[i % 24] = out_vector[i % 24] + vector[i];
+		$.each(matrix, function(i, vector) {
+			for (i = 0; i < vector.length; i++) {
+				out_vector[i] += vector[i];
 			}
-			var count = vector.length / 24;
-			for ( i = 0; i < out_vector.length; i++) {
-				out_vector[i] /= count;
-				out_vector[i] = Number(out_vector[i].toFixed(2));
-			}
-			return out_vector;
+			count += 1;
+		});
+		for (i = 0; i < out_vector.length; i++) {
+			out_vector[i] /= count;
 		}
+		return out_vector;
 	}
-
 	function maxNormalize(vector) {
 		var max_num = vector[0];
 		for (var i = 1; i < vector.length; i++) {
@@ -481,7 +358,6 @@ $(function() {
 		}
 		return vector;
 	}
-
 	function areaNormalize(vector) {
 		var area = 0;
 		for (var i = 0; i < vector.length; i++) {
@@ -493,7 +369,6 @@ $(function() {
 		}
 		return vector;
 	}
-	
 	function loseKeys(vector) {
 		var new_vector = [];
 		for (var i = 0; i < vector.length; i++) {
@@ -501,5 +376,36 @@ $(function() {
 		}
 		return new_vector;
 	}
-
+	//--- Plot functions
+	function renderChart(series_data) {
+		chart = new Highcharts.Chart({
+	    chart: {renderTo: "plot-canvas", type: 'area'},
+	    title: {text: ''},
+	    xAxis: {title: {text: '24 hours of a day'}, categories: [1,'',2,'',3,'',4,'',5,'',6,'',7,'',8,'',9,'',10,'',11,'',12,'',13,'',14,'',15,'',16,'',17,'',18,'',19,'',20,'',21,'',22,'',23,'',24,'']},
+	    yAxis: {title: {text: 'Tweet count (normalized to 1)'}},
+	    series: series_data
+		});
+	}
+	google.maps.event.addDomListener(document.getElementById('norm-max'), 'click', function() {
+		if(base_data && view_data) {
+			chart_data[0].data = loseKeys(maxNormalize(combineVectors(base_data)));
+			chart_data[1].data = loseKeys(maxNormalize(combineVectors(view_data)));
+			renderChart(chart_data);
+		}
+	});
+	google.maps.event.addDomListener(document.getElementById('norm-area'), 'click', function() {
+		if(base_data && view_data) {
+			chart_data[0].data = loseKeys(areaNormalize(combineVectors(base_data)));
+			chart_data[1].data = loseKeys(areaNormalize(combineVectors(view_data)));
+			renderChart(chart_data);
+		}
+	});
+	google.maps.event.addDomListener(document.getElementById('norm-none'), 'click', function() {
+		if(base_data && view_data) {
+			chart_data[0].data = loseKeys(combineVectors(base_data));
+			chart_data[1].data = loseKeys(combineVectors(view_data));
+			renderChart(chart_data);
+		}
+	});
+	//-----
 });

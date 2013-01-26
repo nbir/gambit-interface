@@ -40,7 +40,8 @@ For license information, see LICENSE
 		<!-- GAMBIT RESOURCES -->
 		<script src="../js/toolbar.js"></script>
 		<script src="js/outlier-tool.js"></script>
-		<script src="//brain.isi.edu:4000/static/js/jquery.json.js"></script>
+		<script src="../js/lib.js"></script>
+		<script src="../js/jquery.json.js"></script>
 		
 		<link rel="stylesheet" type="text/css" href="../css/style-document.css" />
 		<link rel="stylesheet" type="text/css" href="css/outlier-tool.css" />
@@ -90,24 +91,17 @@ For license information, see LICENSE
 			<div class="row" style="height:50px;"></div>
 			
 			<div class="row">
-				
-				
-				<div class="span4 form-inline">
-					<select id="location-list" class="span2">
-						<option selected="selected" value="6">Los Angeles</option>
-						<option value="21">LA (finer grid)</option>
-					</select>
-					<button id="load-button" class="btn"><i class="icon-share"></i> Grid bounds</button>
-					<br />
-					<br />
+				<div class="span4">
+					<select id="location-list" class="span3"></select>
 				</div>
 				
-				<div class="span4 form-inline">
-					<span class="btn-group">
+				<div class="span4" style="text-align:center;">
+					<p class="inst" style="text-align:left;">Click <strong>Base</strong> and <strong>View</strong> to switch between <em>base</em> and <em>base</em> options. Each allows to select multiple multiple dates (not necessarily in order). Clicking either button allows to draw an overlay on map to select location. To delete an overlay, unclick both <strong>Base</strong> and <strong>View</strong> and click on the overlay.</p>
+
+					<span class="btn-group span3">
 						<button id="base-button" class="btn"><i class="icon-tag"></i> <span class="text-info">Base</span></button>
 						<button id="view-button" class="btn"><i class="icon-tags"></i> <span class="text-error">View</span></button>
-					</span>
-					<button id="clear-button" class="btn"><i class="icon-trash"></i> Clear</button>
+					</span>	
 				</div>
 				
 				<div class="span4" style="text-align:center;">
@@ -115,30 +109,30 @@ For license information, see LICENSE
 					<div class="span3" id="multi-date" style="font-size:11px;"></div>
 				</div>
 				
-				<div class="span4 form-inline">
-					<br/>
-					<select id="normalize" class="span2">
-						<option value="0">No Norm.</option>
-						<option selected="selected" value="1">Max Norm.</option>
-						<option value="2">Area Norm.</option>
-					</select>
-					<button id="plot-button" class="btn btn-info"><i class="icon-play"></i> Plot</button>
-				</div>
-				
 				<div class="span4">
 					<br/>
-					<button id="graph-panel-button" class="btn" data-toggle="button"><i class="icon-picture"></i> Show/hide Plot</button>
+					<div class="btn-group">
+						<button id="load-button" class="btn btn-info"><i class="icon-play"></i> Load</button>
+						<button id="show-plot-button" class="btn" data-toggle="button"><i class="icon-picture"></i> Show/hide Plot</button>
+						<button id="clear-button" class="btn"><i class="icon-trash"></i></button>
+					</div>
 				</div>
-				
 			</div>
+			<hr/>
 		</div>
 		
+		<div id="plot-panel">
+			<div class="row">
+				<div class="btn-group" data-toggle="buttons-radio">
+					<button id="norm-max" class="btn">Max norm.</button>
+					<button id="norm-area" class="btn">Area norm.</button>
+					<button id="norm-none" class="btn">No norm.</button>
+				</div>
+			</div>
+			<div id="plot-canvas"></div>
+		</div>
+
 		<div id="map-canvas"></div>
-		
-		<div id="graph-panel">
-			<div id="graph-canvas" class="offset4">
-			</div>
-		</div>
 
 	</body>
 </html>

@@ -6,31 +6,28 @@
  * For license information, see LICENSE
  */
 
-#graph-panel {
+#plot-panel {
 	margin:0 auto;
-	padding:0;
-	width:100%;
-	height:30%;
+	padding:5px 25px;
+	width:600px;
+	height:350px;
+	overflow-y: none;
 	
 	position:absolute;
-	bottom:0;
-	z-index:105;
+	top:50%;
+	margin-top:-175px;
+	right:0;
+	z-index:110;
 	
 	background:#fff;
 	opacity: 0.9;
 }
 
-#graph-canvas {
-	height:100%;
+#plot-canvas {
+	height:320px;
 	width:auto;
 	z-index:105;
 	
-	color:black;
+	color:#000000;
 	opacity: 0.9;
 }
-
-#map-canvas {
-	height:100%;
-}
-
-

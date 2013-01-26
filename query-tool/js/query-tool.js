@@ -13,21 +13,15 @@ $(function() {
 		map_type : 'ROADMAP'
 	});
 
-	//--- GLOBALs
+	//--- API URLs
 	var API_V2_LOCATION_LIST = "http://brain.isi.edu:4002/api/v2/location/list";
 	var API_V2_TWEET_FILTER = "http://brain.isi.edu:4002/api/v2/tweet/filter";
-
-	var location_bounds = {};
-
-	var drawing_manager;
-	var current_overlay = null;
-	var current_overlay_type = null;
-
-	var drawing_manager_trim;
 	//-----
 
 
 	//--- Populate locations
+	var location_bounds = {};
+
 	$("#show-button").attr('disabled', true);
 	$.ajax({
 		url: API_V2_LOCATION_LIST,
@@ -122,6 +116,10 @@ $(function() {
 	//-----
 
 	//--- Drawing manager - overlay query
+	var drawing_manager;
+	var current_overlay = null;
+	var current_overlay_type = null;
+
 	drawing_manager = new google.maps.drawing.DrawingManager({
 		drawingMode : null, // No initial drawing mode
 		drawingControl : false, // Do not display drawing controls
@@ -302,6 +300,8 @@ $(function() {
 
 
 	//--- TRIM tool
+	var drawing_manager_trim;
+	
 	drawing_manager_trim = new google.maps.drawing.DrawingManager({
 		drawingMode : null, // No initial drawing mode
 		drawingControl : false, // Do not display drawing controls
