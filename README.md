@@ -32,6 +32,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 - `/user-disp/` - User displacement visualization tool
 - `/trace-tool/` - Trace query tool
 - `/outlier-tool/` - Outlier tool (old version)
-- `/outlier-tool2/` - Outlier tool (new version, incomplete)
+- `/outlier-tool2/` - Outlier tool (new version)
 - `/gang-move/` - Gang activity visualization tool
 - `/gang-move2/` - Gang activity visualization tool (old version)
