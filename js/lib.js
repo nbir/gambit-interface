@@ -176,7 +176,7 @@ function plotHeatmap() {
 				'rgba(63, 0, 91, 1)',
 				'rgba(127, 0, 63, 1)',
 				'rgba(191, 0, 31, 1)',
-				'rgba(255, 0, 0, 1)']
+				'rgba(255, 0, 0, 1)'],
 		});
 		lib_heatmap.setMap(lib_map);
 
