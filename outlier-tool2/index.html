@@ -68,12 +68,22 @@ For license information, see LICENSE
 					Gambit Interface</a>
 					
 					<ul class="nav">
-				    	<li><a id="a-query" href="#">Query Tool</a></li>
-				    	<li><a id="a-disp" href="#">User Displacement</a></li>
-				    	<li><a id="a-trace" href="#">Trace Tool</a></li>
-				    	<li class="active"><a id="a-outlier" href="#">Outlier Tool</a></li>
-				    	<li><a id="a-gang-move" href="#">Gang Move</a></li>
-				    </ul>
+			    	<li><a id="a-query" href="#">Query Tool</a></li>
+			    	<li><a id="a-trace" href="#">Trace Tool</a></li>
+			    	<li class="active"><a id="a-outlier" href="#">Outlier Tool</a></li>
+			    	<li class="dropdown">
+							<a href="projects/" class="dropdown-toggle" data-toggle="dropdown">Other Vis. <b class="caret"></b></a>
+								<ul class="dropdown-menu">	
+								<li class="nav-header">Hollenbeck data</li>
+								<li><a id="a-gang-move" href="#">Gang Move</a></li>
+								<li class="divider"></li>
+								
+								<li class="nav-header">Twitter data</li>
+								<li><a id="a-disp" href="#">User Displacement</a></li>
+								<li><a id="a-heat-change" href="#">Heatmap Change</a></li>
+							</ul>
+						</li>
+				   </ul>
 								
 					<span class="btn-group pull-right">			
 						<button id="action-panel-button" class="btn" data-toggle="button">Action Panel</button>

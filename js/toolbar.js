@@ -5,6 +5,7 @@ $(function() {
 	$('#a-trace').attr('href', '../trace-tool/');
 	$('#a-outlier').attr('href', '../outlier-tool/');
 	$('#a-gang-move').attr('href', '../gang-move/');
+	$('#a-heat-change').attr('href', '../heat-change/');
 	
 	$('#action-panel').toggle();
 	google.maps.event.addDomListener(document.getElementById('action-panel-button'), 'click', function() {

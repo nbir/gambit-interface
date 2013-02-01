@@ -52,6 +52,9 @@ $(function() {
 	$.ajax({
 		url: API_V2_LOCATION_LIST,
 		type: 'GET',
+		data: {
+			class: 'city',
+		},
 		dataType: 'json',
 		error: function(data) {
 			console.log('Error! APIv2 location::list');
