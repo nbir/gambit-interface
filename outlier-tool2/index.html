@@ -11,7 +11,7 @@ For license information, see LICENSE
 
 <html lang="en">
 	<head>
-		<title>GAMBIT Vis | Outlier Tool2</title>
+		<title>GAMBIT Vis | Outlier Tool</title>
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
 		Remove this if you use the .htaccess -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,10 +28,8 @@ For license information, see LICENSE
 		<!-- JQUERY RESOURCES -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
-		<script src="../~packages/multidatespicker/jquery-ui.multidatespicker.js"></script>
 		
-		<link href="../~packages/multidatespicker/css/mdp.css" rel="stylesheet">
-		<!--<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/smoothness/jquery-ui.css" />-->
+		<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/smoothness/jquery-ui.css" />
 
 		<!-- BOOTSTRAP RESOURCES -->
 		<link href="../~packages/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -40,11 +38,9 @@ For license information, see LICENSE
 		<!-- GAMBIT RESOURCES -->
 		<script src="../js/toolbar.js"></script>
 		<script src="js/outlier-tool.js"></script>
-		<script src="../js/lib.js"></script>
-		<script src="../js/jquery.json.js"></script>
+		<script src="//brain.isi.edu:4000/static/js/jquery.json.js"></script>
 		
 		<link rel="stylesheet" type="text/css" href="../css/style-document.css" />
-		<link rel="stylesheet" type="text/css" href="css/outlier-tool.css" />
 		<link rel="stylesheet" type="text/css" href="../css/style-tweet-callout.css" />
 		
 		<!-- LIGHBOX -->
@@ -92,46 +88,135 @@ For license information, see LICENSE
 			
 			<div class="row">
 				<div class="span4">
-					<select id="location-list" class="span3"></select>
+					<p class="inst">Select a location from the drop down menu and click <strong>Load grid data</strong>.</p>
 				</div>
 				
-				<div class="span4" style="text-align:center;">
-					<p class="inst" style="text-align:left;">Click <strong>Base</strong> and <strong>View</strong> to switch between <em>base</em> and <em>base</em> options. Each allows to select multiple multiple dates (not necessarily in order). Clicking either button allows to draw an overlay on map to select location. To delete an overlay, unclick both <strong>Base</strong> and <strong>View</strong> and click on the overlay.</p>
-
-					<span class="btn-group span3">
+				<div class="span4 form-inline">
+					<select id="location-list" class="span2">
+						<option selected="selected" value="6">Los Angeles</option>
+						<option value="21">LA (finer grid)</option>
+					</select>
+					<button id="load-button" class="btn"><i class="icon-th"></i> Load grid data</button>
+					<br />
+					<br />
+				</div>
+				
+				<div class="span4 form-inline">
+					<p class="inst">Select <strong>Base</strong> and <strong>View</strong> grid cells for comparison. Optionally, use the <strong><i class="icon-check"></i> Multi select</strong> button to select multiple cells at once.</p>
+					<span class="btn-group">
 						<button id="base-button" class="btn"><i class="icon-tag"></i> <span class="text-info">Base</span></button>
 						<button id="view-button" class="btn"><i class="icon-tags"></i> <span class="text-error">View</span></button>
-					</span>	
+					</span>
+					<button id="multi-select-button" class="btn"><i class="icon-check"></i> Multi select</button>
 				</div>
 				
-				<div class="span4" style="text-align:center;">
+				<!--
+				<div class="span4">
 					<br/>
-					<div class="span3" id="multi-date" style="font-size:11px;"></div>
+					<p class="inst">Time period for <strong>base</strong>:</p>
+					<span class="form-inline">
+					<div class="input-prepend">
+      					<span class="add-on"><i class="icon-calendar"></i></span>
+      					<input type="text" name="base-from-date" id="base-from-date" class="input-small" placeholder="From" />	
+    				</div>
+					
+					<select id="base-date-range" class="span2">
+						<option selected="selected" value="1">1 day</option>
+						<option value="3">3 days</option>
+						<option value="5">5 days</option>
+						<option value="7">1 week</option>
+					</select>
+    				</span>
 				</div>
 				
 				<div class="span4">
 					<br/>
-					<div class="btn-group">
-						<button id="load-button" class="btn btn-info"><i class="icon-play"></i> Load</button>
-						<button id="show-plot-button" class="btn" data-toggle="button"><i class="icon-picture"></i> Show/hide Plot</button>
-						<button id="clear-button" class="btn"><i class="icon-trash"></i></button>
-					</div>
+					<p class="inst">Time period for <strong>view</strong>:</p>
+					<span class="form-inline">
+					<div class="input-prepend">
+      					<span class="add-on"><i class="icon-calendar"></i></span>
+      					<input type="text" name="view-from-date" id="view-from-date" class="input-small" placeholder="From" />	
+    				</div>
+					
+					<select id="view-date-range" class="span2">
+						<option selected="selected" value="1">1 day</option>
+						<option value="3">3 days</option>
+						<option value="5">5 days</option>
+						<option value="7">1 week</option>
+					</select>
+    				</span>
 				</div>
+				
+				<div class="span4">
+					<br/>
+					<p class="inst">Select a <strong>normalization</strong> and click <strong>Calc.</strong> to compute graph information. Click <strong>Plot</strong> to display the graph.</p>
+					<span class="form-inline">
+					<select id="normalize" class="span2">
+						<option value="0">No Norm.</option>
+						<option selected="selected" value="1">Max Norm.</option>
+						<option value="2">Area Norm.</option>
+					</select>
+					<span class="btn-group">
+						<button id="calc-button" class="btn">Calc.</button>
+						<a id="plot-button" class="btn btn-success various" href="#display-panel">Plot</a>
+					</span>
+					</span>
+				</div>
+				-->
+				
+				<div class="span4">
+					<br/>
+					<p class="inst">Click on the <strong><i class="icon-picture"></i> Show plot window</strong> button below to show the plot window.</p>
+					<p class="inst">Select time period for <strong>base</strong> and <strong>view</strong>, and choose a <strong>normalization</strong> type. Then click <strong><i class="icon-play"></i> Plot</strong> to plot graph with current options.</p>
+				</div>
+				
+				<div class="span4" style="text-align:center;">
+					<a id="show-plot-button" class="btn various" href="#display-panel"><i class="icon-picture"></i> Show plot window</a>
+				</div>
+				
 			</div>
-			<hr/>
 		</div>
 		
-		<div id="plot-panel">
-			<div class="row">
-				<div class="btn-group" data-toggle="buttons-radio">
-					<button id="norm-max" class="btn">Max norm.</button>
-					<button id="norm-area" class="btn">Area norm.</button>
-					<button id="norm-none" class="btn">No norm.</button>
+		<div id="display-panel" style="display:none">
+			<div class="form-inline">
+				<div class="input-prepend">
+      				<span class="add-on"><i class="icon-calendar"></i></span>
+  					<input type="text" name="base-from-date" id="base-from-date" class="input-small" placeholder="Base from" />	
 				</div>
+				<select id="base-date-range" class="span2">
+					<option selected="selected" value="1">1 day</option>
+					<option value="3">3 days</option>
+					<option value="5">5 days</option>
+					<option value="7">1 week</option>
+				</select>
+					
+				<div class="input-prepend">
+  					<span class="add-on"><i class="icon-calendar"></i></span>
+  					<input type="text" name="view-from-date" id="view-from-date" class="input-small" placeholder="View from" />	
+				</div>
+				
+				<select id="view-date-range" class="span2">
+					<option selected="selected" value="1">1 day</option>
+					<option value="3">3 days</option>
+					<option value="5">5 days</option>
+					<option value="7">1 week</option>
+				</select>
+				
+				<span class="pull-right">
+					<select id="normalize" class="span2">
+						<option value="0">No Norm.</option>
+						<option selected="selected" value="1">Max Norm.</option>
+						<option value="2">Area Norm.</option>
+					</select>
+					<span class="btn-group">
+						<button id="plot-button" class="btn btn-info"><i class="icon-play"></i> Plot</button>
+					</span>
+				</span>
 			</div>
-			<div id="plot-canvas"></div>
+			<br/>
+			<div id="chart-container" style="width:850px; height:500px"></div>
 		</div>
-
+		
 		<div id="map-canvas"></div>
 
 	</body>

@@ -86,6 +86,8 @@ $(function() {
 	};
 	//load location polygons
 	var location_polygons = {};
+	var hbk_polygon = null;
+
 	$("#show-button").attr('disabled', true);	// Disable while loading
 	$.ajax({
 		url: API_V2_LOCATION_LIST,
@@ -98,7 +100,7 @@ $(function() {
 			$("#show-button").attr('disabled', false);
 		},
 		success: function(data) {
-			$.each(data, function(i, location) {
+			$.each(data, function(i, location) { 
 				if(location.id >= 23 && location.id <= 54) {
 					gt_points=[];
 					$.each(location.polygon, function(i, latlng) {
@@ -113,6 +115,16 @@ $(function() {
 				    fillColor: "red",
 				    fillOpacity: 0.15
 					});
+				}
+				else if(location.id == 20) {
+					hbk_polygon = new google.maps.Rectangle({
+				    strokeColor: "white",
+				    strokeOpacity: 0.75,
+				    strokeWeight: 2,
+				    fillColor: "white",
+				    fillOpacity: 0
+					});
+					hbk_polygon.setBounds(new google.maps.LatLngBounds(new google.maps.LatLng(location.polygon[0][0], location.polygon[0][1]), new google.maps.LatLng(location.polygon[2][0], location.polygon[2][1])));
 				}
 			});	
 			
@@ -131,6 +143,7 @@ $(function() {
 
 		$.getJSON(JSON_URL + file_name, function(data) {
 			//console.log(data);
+			hbk_polygon.setMap(map);
 			// Gang teritory polygon
 			gt_points=[];
 			$.each(data.location_polygon, function(i, latlng) {
@@ -241,14 +254,17 @@ $(function() {
 		if(gang_territory) {
 			gang_territory.setMap(null);
 			gang_territory = null;
-			$.each(home_marker, function(id, marker) {
-				marker.setMap(null);
-			});
-			home_marker = {};
+			
 			points_outside = [];
 		  points_inside = [];
 			heatmap_outside.setMap(null);
 			heatmap_outside = null;
+		}
+		if(home_marker) {
+			$.each(home_marker, function(id, marker) {
+				marker.setMap(null);
+			});
+			home_marker = {};
 		}
 		if(heatmap_inside) {
 			heatmap_inside.setMap(null);
@@ -257,6 +273,7 @@ $(function() {
 		$.each(location_polygons, function(id, pol) {
 			location_polygons[id].setMap(null);
 		});
+		hbk_polygon.setMap(null);
 
 		// Counts
 		if(marker_cluster_set) {
@@ -353,4 +370,56 @@ $(function() {
 		$("#count-button").button('toggle');
 	});
 	//-----
+
+
+	//---------------------//
+	//--- AUX FUNCTIONS ---//
+	google.maps.event.addDomListener(document.getElementById('hbk-all-button'), 'click', function() {
+		$("#hbk-all-button").attr('disabled', true);
+
+		$.each(location_polygons, function(i, polygon) {
+			polygon.setMap(map);
+		});
+		hbk_polygon.setMap(map);
+		console.log(hbk_polygon.getBounds().toString());
+
+		var large_bounds = new google.maps.Rectangle({
+	    strokeColor: "white",
+	    strokeOpacity: 0.75,
+	    strokeWeight: 2,
+	    fillColor: "white",
+	    fillOpacity: 0
+		});
+		large_bounds.setBounds(new google.maps.LatLngBounds(new google.maps.LatLng(33.988, -118.255), new google.maps.LatLng(34.138, -118.105)));
+		large_bounds.setMap(map);
+
+		$.ajax({
+			url: 'hbk-all/user_home_locations_hbk.json',
+			type: 'GET',
+			dataType: 'json',
+			error: function(data) {
+				console.log('Error! All homes json');
+				console.log(data);
+
+				$("#hbk-all-button").attr('disabled', false);
+			},
+			success: function(data) {
+				var count = 0;
+				$.each(data, function(id, latlng) {
+					if(large_bounds.getBounds().contains(new google.maps.LatLng(latlng[0], latlng[1]))) {
+						home_marker[id] = new google.maps.Marker({
+			      	position: new google.maps.LatLng(latlng[0], latlng[1]),
+			     	 	map: map,
+			    	  title: 'user_id: ' + id
+			 			});
+			 			count += 1;
+					}
+				});
+				console.log('Homes inside HBK : ' + count);
+
+				$("#hbk-all-button").attr('disabled', false);
+			}
+		});
+	});
+	//---------------------//
 });
