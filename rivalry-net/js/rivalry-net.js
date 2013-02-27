@@ -294,11 +294,11 @@ $(function() {
 
 					visit_lines[gang_id][rival_id] = new google.maps.Polyline({
 	          path: line,
-	          strokeColor: "#F781BF",
-	          strokeOpacity: 0.75,
+	          strokeColor: "#E41A1C",
+	          strokeOpacity: 0.45,
 	          strokeWeight: Math.log(count)*1.5,
 	          //strokeWeight: count/4,
-	          zIndex: 10,
+	          zIndex: 11,
 	          map: map
 	        });
 				}
@@ -313,7 +313,7 @@ $(function() {
 					visit_lines[gang_id][rival_id] = new google.maps.Polyline({
 	          path: line,
 	          strokeColor: "#377EB8",
-	          strokeOpacity: 0.75,
+	          strokeOpacity: 0.65,
 	          strokeWeight: Math.log(count)*1.5,
 	          //strokeWeight: count/4,
 	          zIndex: 10,
