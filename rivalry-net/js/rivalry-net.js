@@ -216,7 +216,8 @@ $(function() {
 		    strokeColor: "#555555",
         strokeOpacity: 1,
         strokeWeight: 1.5,
-        fillOpacity: 0
+        fillOpacity: 0,
+        zIndex: 5
 		  });
 		  gang_pols[gang_id].setMap(map);
 
@@ -255,7 +256,7 @@ $(function() {
         map: map,
         center: new google.maps.LatLng(loc.centroid[0], loc.centroid[1]),
         radius: Math.log(gang_tweet_counts[gang_id])*50,
-        zIndex: 110
+        zIndex: 20
       });
    		//A65628,4DAF4A
 
@@ -293,6 +294,7 @@ $(function() {
 	          strokeOpacity: 0.75,
 	          strokeWeight: Math.log(count)*1.5,
 	          //strokeWeight: count/4,
+	          zIndex: 10,
 	          map: map
 	        });
 				}
@@ -310,6 +312,7 @@ $(function() {
 	          strokeOpacity: 0.75,
 	          strokeWeight: Math.log(count)*1.5,
 	          //strokeWeight: count/4,
+	          zIndex: 10,
 	          map: map
 	        });
 				}
