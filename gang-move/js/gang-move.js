@@ -406,14 +406,17 @@ $(function() {
 			success: function(data) {
 				var count = 0;
 				$.each(data, function(id, latlng) {
-					if(large_bounds.getBounds().contains(new google.maps.LatLng(latlng[0], latlng[1]))) {
+					// plot homes inside large bounds
+					//if(large_bounds.getBounds().contains(new google.maps.LatLng(latlng[0], latlng[1]))) {
+					// plot homes inside hbk bounds
+					//if(hbk_polygon.getBounds().contains(new google.maps.LatLng(latlng[0], latlng[1]))) {
 						home_marker[id] = new google.maps.Marker({
 			      	position: new google.maps.LatLng(latlng[0], latlng[1]),
 			     	 	map: map,
 			    	  title: 'user_id: ' + id
 			 			});
 			 			count += 1;
-					}
+					//}
 				});
 				console.log('Homes inside HBK : ' + count);
 
