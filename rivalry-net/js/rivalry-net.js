@@ -252,13 +252,13 @@ $(function() {
         strokeOpacity: 0.75,
         strokeWeight: 1,
         fillColor: "#4DAF4A",
-        fillOpacity: 0.5,
+        fillOpacity: 0.25,
         map: map,
         center: new google.maps.LatLng(loc.centroid[0], loc.centroid[1]),
         radius: Math.log(gang_tweet_counts[gang_id])*50,
         zIndex: 20
       });
-   		//A65628,4DAF4A
+   		//A65628,4DAF4A,FF7F00,984EA3,E41A1C
 
       // Add events
       google.maps.event.addListener(gang_circles[gang_id], 'click', function() {
@@ -278,6 +278,10 @@ $(function() {
 		if(gang_show[gang_id] == false) {
 			//console.log('SHOW: ' + loc_data[gang_id].name);
 			gang_show[gang_id] = true;
+			gang_pols[gang_id].setOptions({
+				fillColor: "#555555",
+				fillOpacity: 0.25
+			});
 
 			var from = new google.maps.LatLng(loc_data[gang_id]['out_point'][0], loc_data[gang_id]['out_point'][1]);
 			visit_lines[gang_id] = {};
@@ -324,6 +328,10 @@ $(function() {
 		if(gang_show[gang_id] == true && hold_lines[gang_id] == false) {
 			//console.log('HIDE: ' + loc_data[gang_id].name);
 			gang_show[gang_id] = false;
+			gang_pols[gang_id].setOptions({
+				fillColor: null,
+				fillOpacity: 0
+			});
 
 			$.each(visit_lines[gang_id], function(rival_id) {
 				visit_lines[gang_id][rival_id].setMap(null);
