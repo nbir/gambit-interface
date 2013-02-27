@@ -8,6 +8,7 @@
 
 $(function() {
 	// Uber blog map styles
+	// http://blog.uber.com/2012/01/09/uberdata-san-franciscomics/
 	var uberStyle = [
 		{
 			featureType: "all",
@@ -84,7 +85,7 @@ $(function() {
 	function loadLocation() {
 		$.ajax({
 			//url: API_V2_LOCATION_LIST,
-			url: 'data/loc_data.json',
+			url: JSON_URL + 'loc_data.json',
 			type: 'GET',
 			//data: {
 				//class: 'dist',
@@ -253,7 +254,8 @@ $(function() {
         fillOpacity: 0.5,
         map: map,
         center: new google.maps.LatLng(loc.centroid[0], loc.centroid[1]),
-        radius: Math.log(gang_tweet_counts[gang_id])*40
+        radius: Math.log(gang_tweet_counts[gang_id])*50,
+        zIndex: 110
       });
    		//A65628,4DAF4A
 
@@ -335,6 +337,10 @@ $(function() {
 		}
 		else if(gang_show[gang_id] == true && hold_lines[gang_id] == false) {
 			hold_lines[gang_id] = true;
+		}
+		else if(gang_show[gang_id] == false && hold_lines[gang_id] == false) {
+			hold_lines[gang_id] = true;
+			showVisitLines(gang_id);
 		}
 	}
 
