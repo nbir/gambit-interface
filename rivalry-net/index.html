@@ -11,7 +11,7 @@ For license information, see LICENSE
 
 <html lang="en">
 	<head>
-		<title>GAMBIT Vis | Query Tool</title>
+		<title>GAMBIT Vis | Rivalry Network</title>
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
 		Remove this if you use the .htaccess -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +24,7 @@ For license information, see LICENSE
 
 		<!-- GOOGLE MAPS RESOURCES -->
 		<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=drawing,visualization"></script>
+		<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/maplabel/src/maplabel-compiled.js"></script>
 
 		<!-- JQUERY RESOURCES -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -37,32 +38,30 @@ For license information, see LICENSE
 
 		<!-- GAMBIT RESOURCES -->
 		<script src="../js/toolbar.js"></script>
-		<script src="../js/lib.js"></script>
-		<script src="js/query-tool.js"></script>
-		<script src="js/markerclusterer.js"></script>
+		<script src="js/rivalry-net.js"></script>
 		
 		<link rel="stylesheet" type="text/css" href="../css/style-document.css" />
-		<link rel="stylesheet" type="text/css" href="../css/style-tweet-callout.css" />
 		
 		<!-- LIGHBOX -->
 		<script src="../~packages/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
 		<link rel="stylesheet" type="text/css" href="../~packages/fancybox/source/jquery.fancybox.css?v=2.1.3" />
 		<script src="../~packages/fancybox/source/jquery.fancybox.pack.js?v=2.1.3"></script>
 	
+	
 	</head>
 
 	<body>
 		<div class="navbar navbar-fixed-top">
 			<div style="padding:0 8px 0 8px;" class="navbar-inner">
-				<a href="" class="brand">
+				<a id="a-home" href="#" class="brand">
 					<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Terrestrial_globe.svg/300px-Terrestrial_globe.svg.png" style="margin:-5px 0 0 0;padding:0;height:25px"/>
 					Gambit Interface</a>
 					
 					<ul class="nav">
-			    	<li class="active"><a id="a-query" href="#">Query Tool</a></li>
+			    	<li><a id="a-query" href="#">Query Tool</a></li>
 			    	<li><a id="a-trace" href="#">Trace Tool</a></li>
 			    	<li><a id="a-outlier" href="#">Outlier Tool</a></li>
-			    	<li class="dropdown">
+			    	<li class="dropdown active">
 							<a href="projects/" class="dropdown-toggle" data-toggle="dropdown">Other Vis. <b class="caret"></b></a>
 								<ul class="dropdown-menu">	
 								<li class="nav-header">Hollenbeck data</li>
@@ -76,94 +75,37 @@ For license information, see LICENSE
 							</ul>
 						</li>
 				   </ul>
-					
+								
 					<span class="btn-group pull-right">			
 						<button id="action-panel-button" class="btn" data-toggle="button">Action Panel</button>
 						<a href="../help/index.html" class="btn various fancybox.ajax">Help</a>
 					</span>
-									
+					
 			</div>
 		</div>
 
 		<div id="action-panel" class="span4">
-			<div class="row" style="height:50px;">
-		</div>
+			<div class="row" style="height:50px;"></div>
 			
-		<div class="row">
-			<div class="span4">
-				<h5>Filter:</h5>
-				 <select id="location-list" class="span3"></select>
-
-				 <div class="input-prepend">
-					<span class="add-on">Match text</span>
-					<input type="text" name="match-text" id="match-text" class="span2 input-small" />	
-				</div>
-				<textarea id="struct-query" class="span3" rows="3" placeholder="Structured query"></textarea>
-			</div>
-		
-			<div class="span4">
-				<br/>
-				<span class="form-inline">
-					<div class="input-prepend">
-      					<span class="add-on"><i class="icon-calendar"></i></span>
-      					<input type="text" name="from-date" id="from-date" class="input-small" placeholder="From" />	
-    				</div>
+			<div class="row">
+				<div class="span4">
+					<h5>Rivalry network:</h5>
+					<p class="inst">The size of the <strong>circles</strong> correspond to the number of tweets by the particular gang'g members.</p>
+					<p class="inst"><strong>mouseover</strong>: show rival/nonrival visit lines.</p>
+					<p class="inst"><strong>mouseout</strong>: hide rival/nonrival visit lines.</p>
+					<p class="inst"><strong>click</strong>: hold that gang's rival/nonrival visit lines.</p>
+					<p class="inst"><strong><span class="text-info">Blue</span></strong> lines show rival territory visits, and <strong><span class="text-error">Pink</span></strong> lines show rival territory visits. The thickness of the lines correspond to the number of tweets in that visit.</p>
 					
-					<div class="input-prepend">
-      					<span class="add-on"><i class="icon-calendar"></i></span>
-      					<input type="text" name="to-date" id="to-date" class="input-small" placeholder="To" />	
-    				</div>
-  			</span>
-			</div>
-
-			<div class="span4">
-				<br/>
-				<div class="btn-group input-prepend input-append">
-					<span class="add-on">Overlay filter</span>
-					<button id="draw-polygon" class="btn"><i class="icon-pencil"></i> Polygon</button>
-					<button id="draw-rectangle" class="btn"><i class="icon-edit"></i> Rect.</button>
-					<!-- <button id="draw-circle" class="btn"><i class="icon-ok-circle"></i></button>
-					<button id="draw-line" class="btn"><i class="icon-minus"></i></button> -->
+					
+					<span class="btn-group">
+						<button id="show-all-button" class="btn"><i class="icon-play"></i> Show All</button>
+						<button id="clear-button" class="btn"><i class="icon-trash"></i></button>
+					</span>
 				</div>
+				
 			</div>
-
-			<div class="span4">
-				<br/>
-				<div class="btn-group">
-					<button id="view-marker" class="btn">Marker view</button>
-					<!--<button id="view-cluster" class="btn">Cluster</button>-->
-					<button id="view-heatmap" class="btn">Heatmap view</button>
-					<!--<button id="show-count" class="btn">#</button>-->
-				</div>
-			</div>
-
-			<div class="span4">
-				<br/>
-				<span class="btn-group">
-					<button id="show-button" class="btn btn-success"><i class="icon-play"></i> Show</button>
-					<button id="side-panel-button" class="btn">Side Panel</button>
-					<button id="clear-button" class="btn"><i class="icon-trash"></i></button>
-				</span>
-			</div>
+			<hr />
 		</div>
-		<hr />
-		
-		<div class="row">
-			<div class="span4">
-
-
-				<div class="btn-group input-prepend input-append">
-					<span class="add-on"><strong><i class="icon-ok-circle"></i> Trim tool </strong> </span>
-					<button id="trim-polygon" class="btn"><i class="icon-pencil"></i> Polygon</button>
-					<button id="trim-rectangle" class="btn"><i class="icon-edit"></i> Rect.</button>
-				</div>
-			</div>
-		</div>
-		<hr />
-		
-	</div>
-	
-		<div id="side-panel"></div>
 		
 		<div id="map-canvas"></div>
 

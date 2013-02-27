@@ -6,6 +6,7 @@ $(function() {
 	$('#a-outlier').attr('href', '../outlier-tool/');
 	$('#a-gang-move').attr('href', '../gang-move/');
 	$('#a-heat-change').attr('href', '../heat-change/');
+	$('#a-rivalry-net').attr('href', '../rivalry-net/');
 	
 	$('#action-panel').toggle();
 	google.maps.event.addDomListener(document.getElementById('action-panel-button'), 'click', function() {
