@@ -10,7 +10,7 @@ $(function() {
 	var light_map_style = [{
 		featureType: "all",
 		stylers: [{
-			saturation: -80
+			saturation: -80,
 		},{
 			inverse_lightness: true
 		}]},
@@ -25,9 +25,11 @@ $(function() {
 				visibility: "off"
 			}]
 		}];
+
 	var light_map_road_style = [{
 		featureType: "all",
 		stylers: [{
+			//lightness: 100,
 			saturation: -80
 		},{
 			inverse_lightness: true
@@ -83,6 +85,7 @@ $(function() {
 	
 	// LOAD functions
 	var loc_data = {};
+	var hbk_pol = null;
 	var rivalry_matrix = {};
 	var gang_tweet_locs = {};
 	var gang_latlng = {};
@@ -127,6 +130,7 @@ $(function() {
 			  	});
 					*/
 				});
+				hbk_pol = loc_data[20].polygon
 				delete loc_data[20];
 				//console.log(loc_data);
 				//$("#show-button").attr('disabled', false);
@@ -221,6 +225,7 @@ $(function() {
 			gang_pols[gang_id] = new google.maps.Polygon({
 		    paths: gt_points,
 		    strokeColor: "#555555",
+		    //strokeColor: 'brown',
         strokeOpacity: 1,
         strokeWeight: 1.5,
         fillOpacity: 0,
@@ -568,6 +573,37 @@ $(function() {
 
 
 	// *** AUXILLARY FUNCTIONS ***
+	// Get line coordinates
+	var drawing_manager = new google.maps.drawing.DrawingManager({
+		drawingMode : null, // No initial drawing mode
+		drawingControl : false, // Do not display drawing controls
+		drawingControlOptions : {
+			drawingModes : [google.maps.drawing.OverlayType.POLYLINE, google.maps.drawing.OverlayType.POLYGON]
+		},
+		drawingMode : null,
+		map : map,
+	});
+
+	var lines = [];
+	google.maps.event.addDomListener(document.getElementById('draw-polyline'), 'click', function() {
+		$('#draw-polyline').button('toggle');
+
+		if(drawing_manager.getDrawingMode() == null) {
+			drawing_manager.setDrawingMode(google.maps.drawing.OverlayType.POLYLINE);
+		}
+		else {
+			drawing_manager.setDrawingMode(null);
+			console.log(JSON.stringify(lines));
+		}
+	});
+	google.maps.event.addListener(drawing_manager, 'polylinecomplete', function(polyline) {
+		line = polyline.getPath().getArray();
+		for(i=0; i<line.length-1; i+=1) {
+			lines.push([[line[i].lat(), line[i].lng()], [line[i+1].lat(), line[i+1].lng()]]);
+		}
+	});
+
+
 	// Show/hide border lines
 	show_border_lines = false;
 	border_lines = [];
@@ -588,7 +624,8 @@ $(function() {
 						line_coord = [new google.maps.LatLng(line[0][0], line[0][1]), new google.maps.LatLng(line[1][0], line[1][1])]
 						border_lines.push(new google.maps.Polyline({
 					    path: line_coord,
-					    strokeColor: "#000000",
+					    //strokeColor: "#000000",
+					    strokeColor: "purple",
 					    strokeOpacity: 1.0,
 					    strokeWeight: 3,
 					    map: map
@@ -643,6 +680,155 @@ $(function() {
 			border_points = [];
 			show_border_points = false;
 		}
+	});
+
+	// Get public area's polygon coordinate
+	var polygons = [];
+	google.maps.event.addDomListener(document.getElementById('draw-polygon'), 'click', function() {
+		$('#draw-polygon').button('toggle');
+
+		if(drawing_manager.getDrawingMode() == null) {
+			drawing_manager.setDrawingMode(google.maps.drawing.OverlayType.POLYGON);
+		}
+		else {
+			drawing_manager.setDrawingMode(null);
+			console.log(JSON.stringify(polygons));
+		}
+	});
+	google.maps.event.addListener(drawing_manager, 'polygoncomplete', function(polygon) {
+		pol = [];
+		polygon.getPath().forEach(function(latlng) {
+			pol.push([latlng.lat(), latlng.lng()]);
+		});
+		pol[pol.length] = pol[0];
+		polygons.push(pol);
+	});
+
+	// Show/hide social/public places polygons
+	show_polygons = false;
+	public_pols = [];
+	google.maps.event.addDomListener(document.getElementById('show-public-poly'), 'click', function() {
+		$("#show-public-poly").button('toggle');
+
+		if(show_polygons == false) {
+			$.ajax({
+				url: JSON_URL + 'public_pols.json',
+				type: 'GET',
+				dataType: 'json',
+				error: function(data) {
+					console.log('Error! Loading public_pols.json');
+					console.log(data)
+				},
+				success: function(data) {
+					$.each(data, function(i, pol) {
+						gt_points = [];
+						$.each(pol, function(i, latlng) {
+							gt_points.push(new google.maps.LatLng(latlng[0], latlng[1]));
+						});
+						gt_points.pop();
+
+						public_pols.push(new google.maps.Polygon({
+					    paths: gt_points,
+					    //strokeColor: "#000000",
+					    strokeColor: "purple",
+			        strokeOpacity: 1,
+			        strokeWeight: 3,
+			        fillOpacity: 0,
+			        map: map
+					  }));
+		 			});
+					show_polygons = true;
+				}
+			});
+		}
+		else {
+			$.each(public_pols, function(i, pol) {
+				pol.setMap(null);
+			});
+			public_pols = [];
+			show_polygons = false;
+		}
+	});
+
+	// Show/Hide all home locations inside hollenbeck
+	var show_homes = false;
+	var home_marker = [];
+	google.maps.event.addDomListener(document.getElementById('show-all-homes'), 'click', function() {
+		$("#show-all-homes").button('toggle');
+
+		if(show_homes == false) {
+			gt_points=[];
+			$.each(hbk_pol, function(i, latlng) {
+				gt_points.push(new google.maps.LatLng(latlng[0], latlng[1]));
+			});
+			gt_points.pop();
+
+			var hbk_polygon = new google.maps.Polygon({paths: gt_points,});
+
+			//hbk_polygon.setMap(map);
+
+			$.ajax({
+				url: JSON_URL + 'hbk_user_home_loc.json',
+				type: 'GET',
+				dataType: 'json',
+				error: function(data) {
+					console.log('Error! All homes json');
+					console.log(data);
+				},
+				success: function(data) {
+					var count = 0;
+					$.each(data, function(id, latlng) {
+						// plot homes inside large bounds
+						//if(large_bounds.getBounds().contains(new google.maps.LatLng(latlng[0], latlng[1]))) {
+						// plot homes inside hbk bounds
+						//if(hbk_polygon.getBounds().contains(new google.maps.LatLng(latlng[0], latlng[1]))) {
+							home_marker.push(new google.maps.Marker({
+				      	position: new google.maps.LatLng(latlng[0], latlng[1]),
+				     	 	map: map,
+				    	  title: 'user_id: ' + id,
+				    	  icon : '../img/black_house.png',
+				 			}));
+				 			count += 1;
+						//}
+					});
+					console.log('Homes inside HBK : ' + count);
+				}
+			});
+			show_homes = true;
+		}
+		else {
+			$.each(home_marker, function(id, marker) {
+				home_marker[id].setMap(null);
+			});
+			home_marker = [];
+			show_homes = false;
+		}
+	});
+
+	// Lighten map background
+	google.maps.event.addDomListener(document.getElementById('white-map'), 'click', function() {
+		map.mapTypes.set('map_style', new google.maps.StyledMapType(
+			[{
+				featureType: "all",
+				stylers: [{
+					lightness: 100,
+				}]
+			},
+			{
+  			featureType: "all",
+  			elementType: "labels",
+  			stylers: [{
+  				visibility: "off"
+  			}]
+  		},
+  		{
+				featureType: "road",
+				stylers: [{
+					visibility: "off"
+				}]
+			}]
+		));
+		map.setMapTypeId('map_style');
 	});
 	// *** ***
 });

@@ -210,7 +210,9 @@ $(function() {
 			var to_date = new Date($("#to-date").val());
 
 			query_string['ts_start'] = from_date.getFullYear() + "-" + (from_date.getMonth() + 1) + "-" + from_date.getDate() + "T00:00:00";
+			//query_string['ts_start'] = from_date.getFullYear() + "-" + (from_date.getMonth() + 1) + "-" + from_date.getDate() + "T15:00:00";
 			query_string['ts_end'] = to_date.getFullYear() + "-" + (to_date.getMonth() + 1) + "-" + to_date.getDate() + "T23:59:59";
+			//query_string['ts_end'] = to_date.getFullYear() + "-" + (to_date.getMonth() + 1) + "-" + to_date.getDate() + "T15:14:59";
 		}
 		if ($("#match-text").val() != "") {
 			query_string['text'] = $("#match-text").val();
