@@ -283,7 +283,7 @@ $(function() {
 	 				gang_markers[gang_id].push(new google.maps.Marker({
 						position : latlng,
 						map : map,
-						icon : '../img/blue-point.png',
+						icon : '../img/sq_red.png',
         		zIndex: 5
 					}));
 	 			});

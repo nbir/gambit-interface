@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<!--
+GAMBIT Interface
+
+Copyright (C) USC Information Sciences Institute
+Author: Nibir Bora <nbora@usc.edu>
+URL: <http://cbg.isi.edu/>
+For license information, see LICENSE
+-->
+
+<html lang="en">
+	<head>
+		<title>GAMBIT Vis | Neighborhoods</title>
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="GAMBIT (Geospatial Analysis of Motion-Based Intelligence and Tracking)" />
+		<meta name="author" content="Nibir Bora" />
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />	-->
+
+		<!-- GOOGLE MAPS RESOURCES -->
+		<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=drawing,visualization"></script>
+		<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/maplabel/src/maplabel-compiled.js"></script>
+
+		<!-- JQUERY RESOURCES -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/smoothness/jquery-ui.css" />
+
+		<!-- BOOTSTRAP RESOURCES -->
+		<link href="../~packages/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<script src="../~packages/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- GAMBIT RESOURCES -->
+		<script src="../js/toolbar.js"></script>
+		<script src="js/hoods.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="../css/style-document.css" />
+		
+		<!-- LIGHBOX -->
+		<script src="../~packages/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+		<link rel="stylesheet" type="text/css" href="../~packages/fancybox/source/jquery.fancybox.css?v=2.1.3" />
+		<script src="../~packages/fancybox/source/jquery.fancybox.pack.js?v=2.1.3"></script>
+	
+	
+	</head>
+
+	<body>
+		<div class="navbar navbar-fixed-top">
+			<div style="padding:0 8px 0 8px;" class="navbar-inner">
+				<a id="a-home" href="#" class="brand">
+					<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Terrestrial_globe.svg/300px-Terrestrial_globe.svg.png" style="margin:-5px 0 0 0;padding:0;height:25px"/>
+					Gambit Interface</a>
+					
+					<ul class="nav">
+			    	<li><a id="a-query" href="#">Query Tool</a></li>
+			    	<li><a id="a-trace" href="#">Trace Tool</a></li>
+			    	<li><a id="a-outlier" href="#">Outlier Tool</a></li>
+			    	<li class="dropdown active">
+							<a href="projects/" class="dropdown-toggle" data-toggle="dropdown">Other Vis. <b class="caret"></b></a>
+								<ul class="dropdown-menu">	
+								<li class="nav-header">Hollenbeck data</li>
+								<li><a id="a-gang-move" href="#">Gang Move</a></li>
+								<li><a id="a-rivalry-net" href="#">Rivalry Network</a></li>
+								<li class="divider"></li>
+								
+								<li class="nav-header">Twitter data</li>
+								<li><a id="a-disp" href="#">User Displacement</a></li>
+								<li><a id="a-heat-change" href="#">Heatmap Change</a></li>
+								<li class="divider"></li>
+								
+								<li class="nav-header">Others</li>
+								<li><a id="a-hoods" href="#">LA Neighborhoods</a></li>
+								<li><a id="a-hood-disp" href="#">Nhood. displacements</a></li>
+								<li><a id="a-disp-plots" href="#">Displacement Plots</a></li>
+							</ul>
+						</li>
+				   </ul>
+								
+					<span class="btn-group pull-right">			
+						<button id="action-panel-button" class="btn" data-toggle="button">Action Panel</button>
+						<a href="../help/index.html" class="btn various fancybox.ajax">Help</a>
+					</span>
+					
+			</div>
+		</div>
+
+		<div id="action-panel" class="span4">
+			<div class="row" style="height:50px;"></div>
+			
+			<div class="row">
+				<div class="span4 form-inline">
+					<div class="btn-group">
+						<button id="show-roads" class="btn">Show/hide roads</button>
+						<button id="show-light-map" class="btn"><i class="icon-adjust"></i></button>
+					</div>
+					<button id="show-all-homes" class="btn"><i class="icon-home"></i> All Homes</button>
+				</div>
+			</div>
+			<hr />
+
+			<div class="row">
+				<div class="span4">
+					<ul class="nav nav-tabs">
+					  <li id="tool-disp-lines" class="active"><a href="#disp-lines" data-toggle="tab">Visit lines</a></li>
+					  <li id="tool-disp-points"><a href="#disp-points" data-toggle="tab">Visit points</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="span4">
+					<div class="btn-group" data-toggle="buttons-radio">
+						<button id="select-region-hbk" class="btn span2">HBK</button>
+						<button id="select-region-south-la" class="btn span2">SouthLA</button>
+						<button id="select-region-west-la" class="btn span2">WestLA</button>
+						<button id="select-region-south-bay" class="btn span2">SouthBay</button>
+					</div>
+					<br/>
+				</div>
+
+				<div id="disp-lines" class="span4">
+					<br/>
+					<div class="btn-group input-prepend" data-toggle="buttons-radio">
+						<button id="visit-mat-1" class="btn span2">Absolute visits</button>
+						<button id="visit-mat-2" class="btn span2">Normalized visits</button>
+						<button id="visitor-mat-1" class="btn span2">Visitors</button>
+					</div>
+					<br/>
+				</div>
+
+				<div class="span4">
+					<br/>
+					<div class="btn-group">
+						<button id="show-all-button" class="btn"><i class="icon-play"></i> Show All</button>
+						<button id="clear-button" class="btn"><i class="icon-trash"></i></button>
+					</div>
+					<br/>
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="row">
+				<div class="span4">
+					<p class="text-error"><i class="icon-hand-down"></i> Data intensive. Browser may become unresponsive.</p>
+					<ul class="nav nav-tabs">
+					  <li id="tool-disp-scatter"><a href="#disp-scatter" data-toggle="tab">Displacement scatter</a></li>
+					</ul>
+					
+				</div>
+			</div>
+
+			<div class="tab-content">
+
+				<div id="disp-scatter" class="row tab-pane">
+					<div class="span4">
+						<label id="show-hbk" class="checkbox span2">
+						  <input type="checkbox" value="">
+						  Hollenbeck
+						</label>
+
+						<label id="show-south-la" class="checkbox span2">
+						  <input type="checkbox" value="">
+						  South LA
+						</label>
+
+						<label id="show-west-la" class="checkbox span2">
+						  <input type="checkbox" value="">
+						  West LA
+						</label>
+
+						<label id="show-south-bay" class="checkbox span2">
+						  <input type="checkbox" value="">
+						  South Bay
+						</label>
+
+						<label id="show-pomona" class="checkbox span2">
+						  <input type="checkbox" value="">
+						  Pomona
+						</label>
+						
+						<label id="show-bernardino" class="checkbox span2">
+						  <input type="checkbox" value="">
+						  San Bernardino
+						</label>
+
+						<label id="show-riverside" class="checkbox span2">
+						  <input type="checkbox" value="">
+						  Riverside
+						</label>
+
+						<br/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="map-canvas"></div>
+
+	</body>
+</html>

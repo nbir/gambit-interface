@@ -370,4 +370,72 @@ $(function() {
 		}
 	});
 
+
+	////////////////////////////////////////////////////////////////////////////////
+	//
+	var rivalry_pred = [];
+	var rivalry_net = [];
+	google.maps.event.addDomListener(document.getElementById('show-rivalry-net'), 'click', function() {
+		$.ajax({
+			url: JSON_URL + 'rivalry_net2.json',
+			type: 'GET',
+			dataType: 'json',
+			error: function(data) {
+				console.log('Error! Loading rivalry_net.json');
+				console.log(data)
+			},
+			success: function(data) {
+				rivalry_net = data;
+				console.log('Done loading rivalry_net.')
+				plot_temp(rivalry_net);
+			}
+		});
+	})
+	google.maps.event.addDomListener(document.getElementById('show-predict-net'), 'click', function() {
+		$.ajax({
+			url: JSON_URL + 'rivalry_pred.json',
+			type: 'GET',
+			dataType: 'json',
+			error: function(data) {
+				console.log('Error! Loading rivalry_pred.json');
+				console.log(data)
+			},
+			success: function(data) {
+				rivalry_pred = data;
+				console.log('Done loading rivalry_pred.')
+				plot_temp(rivalry_pred);
+			}
+		});
+	})
+
+	function plot_temp(list) {
+		$.each(list, function(i, link) {
+			gang_id = link[0];
+			rival_id = link[1];
+			var from = new google.maps.LatLng(loc_data[gang_id]['out_point'][0], loc_data[gang_id]['out_point'][1]);
+			var to = new google.maps.LatLng(loc_data[rival_id]['in_point'][0], loc_data[rival_id]['in_point'][1]);
+			var line = [from, to];
+			var color=null;
+			if (link[2] == 1) {
+				color = 'red';
+			}
+			else if (link[2] == 0) {
+				color = 'blue';
+			}
+			else {
+				color = '#555';
+			}
+
+			var new_line  = new google.maps.Polyline({
+        path: line,
+        //strokeColor: "#E41A1C",
+        strokeColor: color,
+        strokeOpacity: 0.65,
+        strokeWeight: 5,
+        zIndex: 110,
+        map: map
+      });
+    });
+	}
+
 });

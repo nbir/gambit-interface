@@ -7,6 +7,9 @@ $(function() {
 	$('#a-gang-move').attr('href', '../gang-move/');
 	$('#a-heat-change').attr('href', '../heat-change/');
 	$('#a-rivalry-net').attr('href', '../rivalry-net/');
+	$('#a-hoods').attr('href', '../hoods/');
+	$('#a-hood-disp').attr('href', '../hoods-disp/');
+	$('#a-disp-plots').attr('href', '../disp-plots/');
 	
 	$('#action-panel').toggle();
 	google.maps.event.addDomListener(document.getElementById('action-panel-button'), 'click', function() {
