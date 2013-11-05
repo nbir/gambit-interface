@@ -38,9 +38,7 @@ For license information, see LICENSE
 
 		<!-- GAMBIT RESOURCES -->
 		<script src="../js/toolbar.js"></script>
-		<script src="js/convex_hull.js"></script>
-		<script src="js/hoods.js"></script>
-		<script src="js/raw_hood_data.js"></script>
+		<script src="js/la-gangs.js"></script>
 		
 		<link rel="stylesheet" type="text/css" href="../css/style-document.css" />
 		
@@ -102,68 +100,19 @@ For license information, see LICENSE
 					<div class="btn-group">
 						<button id="show-roads" class="btn">Show/hide roads</button>
 						<button id="show-light-map" class="btn"><i class="icon-adjust"></i></button>
-						<button id="select-all" class="btn"><i class="icon-ok"></i> All</button>
-						<button id="clear-all" class="btn"><i class="icon-remove"></i></button>
 					</div>
 					<br/>
 
 					<p id="label-name" style="height:30px;padding:5px;border:outset 1px #ddd;border-radius:10px;background:#eee;" class="lead text-error"></p>
 				</div>
 
-				<div class="span4 form-inline">
-					<div class="btn-group">
-						<button id="show-all-homes" class="btn"><i class="icon-home"></i> All Homes</button>
-					</div>
-					<br/>
+				<div class="span4" style="height:100px;">
 				</div>
 			</div>
 			<hr />
+			
+			<div id="div-names" class="row"></div>
 
-
-			<div class="row">
-				<div class="span4">
-					<h5>Housekeeping:</h5>
-
-					<div class="btn-group input-prepend">
-						<span class="add-on">Pols.</span>
-						<button id="dl-hood-all" class="btn"><i class="icon-download-alt"></i> All hoods</button>
-						<button id="dl-hood-select" class="btn"><i class="icon-download-alt"></i> Selected</button>
-					</div>
-					<br/>
-				</div>
-
-				<div class="span4">
-					<div class="btn-group input-prepend">
-						<span class="add-on">IDs. </span>
-						<button id="dl-hood-id-all" class="btn"><i class="icon-download-alt"></i> All hoods</button>
-						<button id="dl-hood-id-select" class="btn"><i class="icon-download-alt"></i> Selected</button>
-					</div>
-					<br/>
-				</div>
-
-				<div class="span4 form-inline">
-					<div class="btn-group">
-						<button id="convex-hull" class="btn"><i class="icon-fullscreen"></i> Convex hull</button>
-						<button id="clear-hull" class="btn"><i class="icon-remove"></i></button>
-					</div>
-
-					<div class="btn-group">
-						<button id="draw-polygon" class="btn"><i class="icon-pencil"></i></button>
-						<button id="dl-polygon" class="btn"><i class="icon-download-alt"></i></button>
-					</div>
-					<br/>
-				</div>
-
-				<div class="span4">
-					<br/>
-					<div class="btn-group">
-						<button id="place-marker" class="btn"><i class="icon-map-marker"></i></button>
-					</div>
-					<br/>
-				</div>
-
-				
-			</div>
 		</div>
 
 		<div id="map-canvas"></div>

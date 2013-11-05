@@ -157,48 +157,58 @@ $(function() {
 			hood_pols[h_id] = new google.maps.Polygon({
 		    paths: gt_points,
 		    strokeColor: region_col[loc_data[h_id]['region']],
-        strokeOpacity: 1,
-        strokeWeight: 1.5,
-        fillOpacity: 0,
-        zIndex: 10
-		  });
-		  hood_pols[h_id].setMap(map);
+		        strokeOpacity: 1,
+		        strokeWeight: 1.5,
+		        fillOpacity: 0,
+		        //zIndex: 10
+		  	});
+		  	hood_pols[h_id].setMap(map);
+		  	
+		  	
+		  	//Housekeeping
+		  	/*
+		  	google.maps.event.addListener(hood_pols[h_id], 'click', function(e) {
+		  		console.log(h_id + ': (' + e.latLng.lng() + ', ' + e.latLng.lat() + '),');
+		  		click_markers.push(new google.maps.Marker({ position: e.latLng, map: map }));
+		  	});
+			*/
 
-      // Add events
-      google.maps.event.addListener(hood_pols[h_id], 'click', function() {
-      	if(show_status[h_id] == false) {
-      		hood_pols[h_id].setOptions({
-						fillColor: region_col[loc_data[h_id]['region']],
-						fillOpacity: 0.25
-					});
-      		show_status[h_id] = true;
-      	}
-      	else {
-      		hood_pols[h_id].setOptions({
-						fillColor: null,
-						fillOpacity: 0
-					});
-					show_status[h_id] = false;
-      	}
-      });
-      google.maps.event.addListener(hood_pols[h_id], 'mouseover', function() {
-				$("#label-name").append(loc_data[h_id]['name']);
-      	if(show_status[h_id] == false) {
-      		hood_pols[h_id].setOptions({
-						fillColor: region_col[loc_data[h_id]['region']],
-						fillOpacity: 0.25
-					});
-      	}
-      });
-      google.maps.event.addListener(hood_pols[h_id], 'mouseout', function() {
-      	$("#label-name").empty();
-      	if(show_status[h_id] == false) {
-      		hood_pols[h_id].setOptions({
-						fillColor: null,
-						fillOpacity: 0
-					});
-      	}
-      });
+			// Add events
+			google.maps.event.addListener(hood_pols[h_id], 'click', function() {
+				if(show_status[h_id] == false) {
+					hood_pols[h_id].setOptions({
+							fillColor: region_col[loc_data[h_id]['region']],
+							fillOpacity: 0.25
+						});
+					show_status[h_id] = true;
+				}
+				else {
+					hood_pols[h_id].setOptions({
+							fillColor: null,
+							fillOpacity: 0
+						});
+						show_status[h_id] = false;
+				}
+			});
+			google.maps.event.addListener(hood_pols[h_id], 'mouseover', function() {
+					$("#label-name").append(loc_data[h_id]['name']);
+				if(show_status[h_id] == false) {
+					hood_pols[h_id].setOptions({
+							fillColor: region_col[loc_data[h_id]['region']],
+							fillOpacity: 0.25
+						});
+				}
+			});
+			google.maps.event.addListener(hood_pols[h_id], 'mouseout', function() {
+				$("#label-name").empty();
+				if(show_status[h_id] == false) {
+					hood_pols[h_id].setOptions({
+							fillColor: null,
+							fillOpacity: 0
+						});
+				}
+			});
+
 		});
 	}
 
@@ -480,6 +490,29 @@ $(function() {
 		json = JSON.stringify(points);
 		window.open("data:text/json;charset=utf-8," + json);
 	});	
+
+	// Place marker on map
+	var place_marker = false;
+	var click_markers = [];
+	google.maps.event.addDomListener(document.getElementById('place-marker'), 'click', function() {
+		$('#place-marker').button('toggle');
+		
+		if(place_marker == false) {
+			google.maps.event.addListener(map, 'click', function(e) {
+			    var position = e.latLng;
+			    click_markers.push(new google.maps.Marker({ position: position, map: map }));
+			    console.log('(' + position.lng() + ', ' + position.lat() + ')')
+				});
+			place_marker = true;
+		}
+		else {
+			$.each(click_markers, function(i, marker) {
+				click_markers[i].setMap(null);
+			});
+			click_markers = [];
+			place_marker = false;
+		}
+	});
 
 
 });

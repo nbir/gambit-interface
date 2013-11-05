@@ -572,21 +572,31 @@ $(function() {
 			hood_pols[h_id] = new google.maps.Polygon({
 		    paths: gt_points,
 		    strokeColor: "#555555",
-        strokeOpacity: 1,
-        strokeWeight: 1.5,
-        fillOpacity: 0,
-        zIndex: 5
+	        strokeOpacity: 1,
+	        strokeWeight: 1.5,
+	        fillOpacity: 0,
+	        zIndex: 5
 		  });
 		  hood_pols[h_id].setMap(map);
 
+		  // Housekeeping
+		  /*
+		  	var click_markers = [];
+		  	google.maps.event.addListener(hood_pols[h_id], 'click', function(e) {
+	  			console.log(h_id + ': (' + e.latLng.lng() + ', ' + e.latLng.lat() + '),');
+	  			click_markers.push(new google.maps.Marker({ position: e.latLng, map: map }));
+	  		});
+			*/
+
+
 		  // Assigne hood labels
 		  hood_labels[h_id] = new MapLabel({
-        text: loc.name,
-        position: new google.maps.LatLng(loc.centroid[0], loc.centroid[1]),
-        map: map,
-        fontSize: 11,
-        align: 'center'
-      });
+	        text: loc.name,
+	        position: new google.maps.LatLng(loc.centroid[0], loc.centroid[1]),
+	        map: map,
+	        fontSize: 11,
+	        align: 'center'
+	      });
 
 		  if (tool == 'points') {
 	      // Add events
@@ -602,8 +612,8 @@ $(function() {
 		  }
 		});
 
+		
 		map.fitBounds(region_bounds);
-
 		if (tool == 'lines') {
 			plotNhoodCircles();
 		}
